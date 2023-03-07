@@ -183,7 +183,7 @@ export default function Index() {
           </h2>
 
           <p>
-            Some of my latest projects, ideas or just experiments inspired by
+            Some of my latest projects, ideas or just experiments led by
             serendipity.
           </p>
         </div>
