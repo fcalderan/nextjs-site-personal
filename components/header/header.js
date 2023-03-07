@@ -5,6 +5,7 @@ import style from "./header.module.scss";
 export default function Header(props) {
   const firstMenuItem = useRef();
   const toggleMenuButton = useRef();
+  const toggleThemeButton = useRef();
 
   const menuSettings = [
     {
@@ -35,6 +36,7 @@ export default function Header(props) {
   const toggleThemeHandler = () => {
     const selectedTheme = props.currentTheme === "dark" ? "light" : "dark";
     props.onToggleTheme(selectedTheme);
+    toggleThemeButton.current.focus();
   };
 
   const clickMenuHandler = (ev) => {
@@ -124,6 +126,7 @@ export default function Header(props) {
           id="theme-toggle"
           aria-label={themeSettings[props.currentTheme]}
           aria-live="polite"
+          ref={toggleThemeButton}
           onClick={toggleThemeHandler}
           className={`${style["header__toggle"]} ${style["header__toggle--theme"]}`}
           hidden
