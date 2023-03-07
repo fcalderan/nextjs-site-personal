@@ -56,13 +56,18 @@ export default function Layout(props) {
     <>
       <SymbolsSVG />
 
-      <a
-        href="#content"
-        className="skiplink"
-        inert={mobileMenuOpened === true ? "" : null}
-      >
-        Skip to main content
-      </a>
+      {/* This condition can be removed when Firefox
+       * will implement by default the "inert" attribute
+       */}
+      {mobileMenuOpened !== true && (
+        <a
+          href="#content"
+          className="skiplink"
+          inert={mobileMenuOpened === true ? "" : null}
+        >
+          Skip to main content
+        </a>
+      )}
 
       <Header
         onToggleMenu={toggleMenuHandler}
