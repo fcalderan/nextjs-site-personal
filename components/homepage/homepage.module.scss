@@ -420,17 +420,17 @@
         filter: sepia(100%) hue-rotate(178deg);
       }
     }
+
     @media (min-width: 64rem) {
-      .card:nth-child(odd) .card__image {
-        margin: 0 0 0 auto;
-        --rotation: 1.25deg;
-      }
-      .card:nth-child(even) .card__image {
+      margin: 0 0 0 auto;
+      --rotation: 1.25deg;
+
+      &:nth-child(even) .card__image {
         margin: 0 auto 0 0;
         --rotation: -1.25deg;
       }
 
-      .card:hover .card__image {
+      &:hover .card__image {
         transform: scale(1.04) rotate(var(--rotation));
       }
     }
