@@ -83,20 +83,19 @@
         opacity: 0;
       }
       svg {
-        transition: opacity 0s 1.25s;
+        transition: opacity 0s 0s;
         position: absolute;
         z-index: 2;
         inset: 0;
       }
 
       &[aria-expanded="true"] {
-        svg {
-          transition: opacity 0s 0.15s;
-        }
         .header__toggle--menu-closed {
+          transition: opacity 0.25s 0s;
           opacity: 0;
         }
         .header__toggle--menu-open {
+          transition: opacity 0.25s 0.5s;
           opacity: 1;
         }
       }
@@ -125,7 +124,10 @@
   }
 
   @media (max-width: #{$mobile-menu-breakpoint - 0.01}) {
-    &__toggle::before {
+    --menu-open: 1s;
+    --items-show: 1.25s;
+
+    &__toggle--menu::before {
       content: "";
       position: fixed;
       left: 0;
@@ -137,16 +139,20 @@
       aspect-ratio: inherit;
       border-radius: inherit;
       background-color: var(--_spreadcolor, var(--c_secondary));
-      transition: transform 0.5s 1.25s, inline-size 0.5s 1.25s,
-        background-color 0.25s 1s;
+      transition: transform 0s 0s, inline-size 0s 0s, background-color 0s 0s;
     }
 
-    &__toggle[aria-expanded="true"]::before {
-      transition: inline-size 0.5s 0s, background-color 0.5s 0.5s;
-      --_size: 150vmax;
-      --_x: -25vmax;
-      --_y: -25vmax;
-      --_spreadcolor: var(--c_secondary-tr);
+    &__toggle[aria-expanded="true"] {
+      animation: 1s disablepointer 0s;
+
+      &::before {
+        transition: inline-size var(--menu-open) 0s,
+          background-color 0.5s var(--menu-open);
+        --_size: 150vmax;
+        --_x: -25vmax;
+        --_y: -25vmax;
+        --_spreadcolor: var(--c_secondary-tr);
+      }
     }
 
     &__menu {
@@ -158,20 +164,17 @@
       background-color: var(--c_secondary);
       inline-size: 0;
       overflow: hidden;
-      transition: inline-size 0s 0.33s, padding 0s 0.33s;
+      transition: inline-size 0s 0s, padding 0s 0s;
       font-size: min(calc(2vw + 1rem), 1.8rem);
       line-height: 1.5;
 
       li {
-        --_transform-delay: 0s;
-        --_border-delay: 1s;
-        border-left: 3px solid transparent;
-        padding-left: 1.5rem;
+        border-inline-start: 3px solid transparent;
+        padding-inline-start: 1rem;
         opacity: 0.7;
         display: block;
         transform: translateX(-102vw);
-        transition: opacity 0.33s 0s, transform 1s var(--_transform-delay),
-          border-color 0.25s var(--_border-delay);
+        transition: opacity 0.33s 0s;
         padding-block: 0.5rem;
 
         &:nth-child(2) {
@@ -192,6 +195,7 @@
         a {
           display: flex;
           align-items: center;
+          padding-inline-start: 1rem;
         }
 
         svg {
@@ -203,30 +207,32 @@
       }
     }
 
-    &__toggle:not([data-animation])[aria-expanded="true"] ~ .header__menu,
-    &__toggle[data-animation="1"][aria-expanded="true"] ~ .header__menu {
+    &__toggle[aria-expanded="true"] ~ .header__menu {
       display: block;
+      animation: 0s showmenu 0.5s forwards;
+
+      li {
+        animation: 0.5s showlinks calc(0.75s + var(--_i, 0) * 0.25s) forwards;
+      }
     }
 
-    &__toggle[data-animation="1"][aria-expanded="true"] ~ .header__menu {
-      inline-size: 100%;
-      padding: 5rem 2.5rem;
+    @keyframes showmenu {
+      100% {
+        inline-size: 100%;
+        padding: 5rem 2.5rem;
+      }
     }
-
-    &__toggle[data-animation="1"][aria-expanded="true"] ~ .header__menu li {
-      transform: translateX(0);
-      border-color: currentColor;
+    @keyframes showlinks {
+      100% {
+        transform: translateX(0);
+        border-color: currentColor;
+      }
     }
-
-    &__toggle[data-animation="1"][aria-expanded="false"] ~ .header__menu {
-      display: block;
-      transition: inline-size 0s 1.33s, padding 0s 1.33s;
-      inline-size: 0;
-      padding: 0;
-    }
-
-    &__toggle[data-animation="0"][aria-expanded="false"] ~ .header__menu {
-      display: none;
+    @keyframes disablepointer {
+      0%,
+      100% {
+        pointer-events: none;
+      }
     }
   }
 

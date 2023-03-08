@@ -11,12 +11,12 @@ export default function Header(props) {
     {
       ariaLabel: "Open main menu",
       focusElement: toggleMenuButton,
-      timeout: 2000,
+      timeout: 1500,
     },
     {
       ariaLabel: "Close main menu (press Escape key)",
       focusElement: firstMenuItem,
-      timeout: 10,
+      timeout: 50,
     },
   ];
 
@@ -30,6 +30,7 @@ export default function Header(props) {
 
   const toggleMenuHandler = () => {
     setMenuInitialized(true);
+    //toggleMenuButton.current.classList.toggle("open");
     props.onToggleMenu();
   };
 
@@ -54,15 +55,17 @@ export default function Header(props) {
       setMenuLabel(settings.ariaLabel);
       settings.focusElement.current.focus();
 
-      setTimeout(() => {
-        toggleMenuButton.current.setAttribute("data-animation", statusInt);
-      }, settings.timeout);
+      // setTimeout(() => {
+      //   toggleMenuButton.current.setAttribute("data-animation", statusInt);
+      //   settings.focusElement.current.focus();
+      // }, settings.timeout);
 
-      if (!props.mobileMenuOpened) {
-        setTimeout(() => {
-          toggleMenuButton.current.removeAttribute("data-animation", statusInt);
-        }, settings.timeout + 20);
-      }
+      // if (!props.mobileMenuOpened) {
+      //   setTimeout(() => {
+      //     toggleMenuButton.current.removeAttribute("data-animation", statusInt);
+      //     settings.focusElement.current.focus();
+      //   }, settings.timeout + 20);
+      // }
     }
   });
 
@@ -98,7 +101,7 @@ export default function Header(props) {
         <ul role="list" className={style["header__menu"]}>
           <li>
             <Link href="#about" ref={firstMenuItem} onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false" width="30" height="30">
+              <svg aria-hidden="true" focusable="false">
                 <use xlinkHref="#svg-about"></use>
               </svg>
               About
@@ -106,7 +109,7 @@ export default function Header(props) {
           </li>
           <li>
             <Link href="#skills" onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false" width="30" height="30">
+              <svg aria-hidden="true" focusable="false">
                 <use xlinkHref="#svg-skills"></use>
               </svg>
               Skills
@@ -114,7 +117,7 @@ export default function Header(props) {
           </li>
           <li>
             <Link href="#inspiration" onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false" width="30" height="30">
+              <svg aria-hidden="true" focusable="false">
                 <use xlinkHref="#svg-inspiration"></use>
               </svg>
               Inspiration

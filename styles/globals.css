@@ -158,7 +158,9 @@ ul {
 }
 
 :target {
-  scroll-margin-block-start: calc(var(--header-block-size) + 5rem);
+  scroll-margin-block-start: calc(
+    var(--header-block-size) + var(--section-block-padding)
+  );
 }
 
 .skiplink {
