@@ -36,8 +36,7 @@ export default function Header(props) {
 
   const toggleThemeHandler = () => {
     const selectedTheme = props.currentTheme === "dark" ? "light" : "dark";
-    props.onToggleTheme(selectedTheme);
-    toggleThemeButton.current.focus();
+    props.onToggleTheme(selectedTheme, toggleThemeButton);
   };
 
   const clickMenuHandler = (ev) => {

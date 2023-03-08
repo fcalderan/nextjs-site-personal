@@ -7,9 +7,10 @@ export default function Layout(props) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [theme, setTheme] = useState();
 
-  const toggleThemeHandler = (selectedState) => {
+  const toggleThemeHandler = (selectedState, toggleThemeButton) => {
     localStorage.setItem("theme", selectedState);
-    setTheme(selectedState);
+    setTheme((_) => selectedState);
+    toggleThemeButton.current.focus();
   };
 
   const toggleMenuHandler = () => {
