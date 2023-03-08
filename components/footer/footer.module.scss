@@ -1,9 +1,6 @@
 .footer {
   background: var(--c_tertiary);
-  padding: 5rem 1.5rem;
-  @media (min-width: 48rem) {
-    padding: 5rem 2.5rem;
-  }
+  padding: var(--section-block-padding) var(--section-inline-padding);
 
   > div {
     display: flex;

@@ -114,20 +114,12 @@
 }
 
 .section {
-  padding: 5rem 1.5rem;
+  padding: var(--section-block-padding) var(--section-inline-padding);
   background-color: var(--c_base_background);
-
-  &:where([aria-labelledby="content"]) {
-    padding-block-start: 3rem;
-  }
 
   &[aria-labelledby="content"],
   &[aria-labelledby="skills"] {
     background-color: var(--c_tertiary);
-  }
-
-  @media (min-width: 48rem) {
-    padding: 5rem 2.5rem;
   }
 
   :where(h1, h2, h3) {

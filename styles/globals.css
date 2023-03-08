@@ -75,7 +75,7 @@ html {
   --skip-slide-duration: 0.5s;
   --social-icon-offset: 0;
   --header-block-size: calc(16px + 2.4rem);
-  --section-block-padding: 5rem;
+  --section-block-padding: 3rem;
   --section-inline-padding: 1.5rem;
 }
 
@@ -96,6 +96,7 @@ body {
 
 @media (min-width: 48rem) {
   html {
+    --section-block-padding: 5rem;
     --section-inline-padding: 2.5rem;
   }
 }
