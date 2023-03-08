@@ -116,6 +116,7 @@
 .section {
   padding: var(--section-block-padding) var(--section-inline-padding);
   background-color: var(--c_base_background);
+  min-height: max(40vh, 25rem);
 
   &[aria-labelledby="content"],
   &[aria-labelledby="skills"] {
