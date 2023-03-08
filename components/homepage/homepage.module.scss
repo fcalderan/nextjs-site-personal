@@ -131,8 +131,6 @@
   }
 
   :where(h1, h2, h3) {
-    position: relative;
-    z-index: 1;
     margin: 0;
     padding: 0 0.15em;
     font-family: "Inter-ExtraBold", Arial;
@@ -205,13 +203,11 @@
     }
 
     svg {
-      position: absolute;
+      display: block;
+      margin: 0 auto;
       aspect-ratio: 1;
       fill: currentColor;
-      top: 0;
-      left: 50%;
       fill: var(--c_primary);
-      transform: translate(-50%, calc(-100% - 0.5rem));
       inline-size: min(10vw, 40px);
     }
   }
