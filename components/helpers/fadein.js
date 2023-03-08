@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import style from "./fadein.module.scss";
 
 export default function FadeInSection(props) {
-  const [isVisible, setVisible] = useState(true);
+  const [isVisible, setVisible] = useState();
   const domRef = useRef();
 
   useEffect(() => {
@@ -13,7 +13,9 @@ export default function FadeInSection(props) {
         observer.unobserve(domRef.current);
       }
     });
-    observer.observe(domRef.current);
+    setTimeout(() => {
+      observer.observe(domRef.current);
+    }, 100);
     return () => observer.unobserve(domRef.current);
   }, [isVisible]);
   return (

@@ -12,3 +12,11 @@
     opacity: 1;
   }
 }
+
+.fade-in-section:has(:target) {
+  & section > div {
+    transition: none;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
