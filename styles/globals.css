@@ -36,6 +36,7 @@ html {
   --c_complementary: hsla(150, 35%, 44%, 1);
   --c_complementary-tr: hsla(147, 46%, 40%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
+  --c_gray: hsl(210, 8%, 54%);
   --box-shadow: hsla(210, 34%, 88%, 0.5);
   --invert: 0;
   color-scheme: light;
@@ -279,10 +280,10 @@ main:focus {
     position: absolute;
     z-index: 1;
     display: block;
-    font: max(40%, 1.6rem) "Caveat-Regular";
+    font: max(40%, 1.6rem) "Caveat-Regular", serif;
     opacity: 0.6;
     letter-spacing: 0;
-    color: hsl(210, 8%, 54%);
+    color: var(--c_gray);
     text-shadow: 0 0 1px currentColor;
     background-size: 50px auto;
     background-repeat: no-repeat;

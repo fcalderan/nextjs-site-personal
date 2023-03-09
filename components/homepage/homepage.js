@@ -1,6 +1,11 @@
 import style from "./homepage.module.scss";
 import Social from "../social/social";
 import Fadein from "../helpers/fadein";
+import Image from "next/image";
+
+import profilePic from "../../public/img/me-front2.png";
+import skill1 from "../../public/img/code-in-the-dark.jpg";
+import skill2 from "../../public/img/iaap-was-certificate.jpg";
 
 export default function Index() {
   return (
@@ -25,8 +30,9 @@ export default function Index() {
 
           <figure className={style.portrait}>
             <div>
-              <img
-                src="/img/me-front2.png"
+              <Image
+                width="230"
+                src={profilePic}
                 alt="my portrait, a not-so-young but still curious developer"
               />
             </div>
@@ -124,10 +130,11 @@ export default function Index() {
                 <figure
                   className={`${style["card__image"]} ${style["card__image--colorized"]}`}
                 >
-                  <img
-                    src="/img/code-in-the-dark.jpg"
+                  <Image
+                    src={skill1}
                     alt="Me and other partecipants in the elimination round of the Code in the Dark in 2019."
                   />
+                  <figcaption>Code in the Dark, 2019.</figcaption>
                 </figure>
               </section>
 
@@ -168,10 +175,11 @@ export default function Index() {
                 </div>
 
                 <figure className={style["card__image"]}>
-                  <img
-                    src="/img/iaap-was-certificate.jpg"
+                  <Image
+                    src={skill2}
                     alt="My certificate for successfully completing the IAAP/WAS course"
                   />
+                  <figcaption>A deep dive into accessibility.</figcaption>
                 </figure>
               </section>
             </div>

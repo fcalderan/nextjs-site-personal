@@ -396,10 +396,11 @@
       padding: 0;
       margin: 0 auto;
       color: var(--box-shadow);
+      background: var(--c_base_background);
       max-inline-size: min(100%, 480px);
       --_b: 1rem;
       border: var(--_b) var(--c_base_background) solid;
-      border-block-end-width: calc(var(--_b) * 6);
+      //border-block-end-width: calc(var(--_b) * 6);
       border-radius: 5px;
       outline: 1px var(--c_base_background) solid;
       box-shadow: 0 1px 1px currentColor, 0 2px 6px currentColor,
@@ -411,8 +412,20 @@
 
       img {
         max-inline-size: 100%;
+        block-size: 100%;
         display: block;
+        outline: 1px solid var(--c_tertiary);
+        outline-offset: 1px;
+        object-fit: "contain";
         filter: #{"invert" }(var(--invert));
+      }
+
+      figcaption {
+        color: var(--c_gray);
+        font: 1.25rem "Caveat-Regular", serif;
+        padding-block: 1.5rem;
+        min-block-size: 3.6rem;
+        background: none;
       }
 
       &--colorized img {
