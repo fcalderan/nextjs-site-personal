@@ -31,6 +31,7 @@ export default function Index() {
           <figure className={style.portrait}>
             <div>
               <img
+                width="230"
                 src="/img/me-front2.png"
                 alt="my portrait, a not-so-young but still curious developer"
               />
