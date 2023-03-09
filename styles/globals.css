@@ -8,21 +8,25 @@
 @font-face {
   font-family: "Inter-Medium"; /* 109kb */
   font-weight: 500;
+  font-display: swap;
   src: url(/fonts/Inter-Medium.woff2) format("woff2");
 }
 @font-face {
   font-family: "Inter-ExtraBold"; /* 109kb */
   font-weight: 800;
+  font-display: swap;
   src: url(/fonts/Inter-ExtraBold.woff2) format("woff2");
 }
 @font-face {
   font-family: "DarkerGrotesque-Medium"; /* 39kb */
   font-weight: 500;
+  font-display: swap;
   src: url(/fonts/DarkerGrotesque-Medium.woff2) format("woff2");
 }
 @font-face {
   font-family: "Caveat-Regular"; /* 103kb */
   font-weight: 400;
+  font-display: swap;
   src: url(/fonts/Caveat-Regular.woff2) format("woff2");
 }
 
