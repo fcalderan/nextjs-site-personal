@@ -413,8 +413,6 @@
         max-inline-size: 100%;
         block-size: 100%;
         display: block;
-        outline: 1px solid var(--c_tertiary);
-        outline-offset: 1px;
         object-fit: "contain";
         filter: #{"invert" }(var(--invert));
       }
