@@ -153,6 +153,7 @@
     font-size: clamp(3.5rem, 2.075rem + 4.5vw, 6rem);
     letter-spacing: min(-0.2rem, -0.35vw);
     margin-block-end: 3rem;
+    max-inline-size: 100%;
     margin-inline: auto;
     @media (min-width: 64rem) {
       padding-inline: 0;
