@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Indexlayout from "../components/layout/index";
 import Homepage from "../components/homepage/homepage";
 
 const Metadata = {
@@ -9,7 +10,7 @@ const Metadata = {
 
 export default function Index() {
   return (
-    <>
+    <Indexlayout>
       <Head>
         <title>Fabrizio Calderan, frontend developer in Treviso area</title>
 
@@ -34,7 +35,7 @@ export default function Index() {
       </Head>
 
       <Homepage />
-    </>
+    </Indexlayout>
   );
 }
 

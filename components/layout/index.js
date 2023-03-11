@@ -3,7 +3,7 @@ import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
-export default function Layout(props) {
+export default function Indexlayout(props) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [theme, setTheme] = useState();
 
@@ -76,6 +76,7 @@ export default function Layout(props) {
         closeMobileMenu={closeMobileMenu}
         mobileMenuOpened={mobileMenuOpened}
         currentTheme={theme}
+        type="index"
       />
 
       <main
@@ -86,7 +87,7 @@ export default function Layout(props) {
         {props.children}
       </main>
 
-      <Footer mobileMenuOpened={mobileMenuOpened} />
+      <Footer inert={mobileMenuOpened === true ? "" : null} />
     </>
   );
 }

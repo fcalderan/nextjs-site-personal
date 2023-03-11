@@ -3,10 +3,7 @@ import Social from "../social/social";
 
 export default function Footer(props) {
   return (
-    <footer
-      className={style.footer}
-      inert={props.mobileMenuOpened === true ? "" : null}
-    >
+    <footer className={style.footer} inert={props.inert}>
       <div>
         <div className={style.copyright}>
           <p>

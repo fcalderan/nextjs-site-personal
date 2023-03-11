@@ -11,12 +11,10 @@ export default function Header(props) {
     {
       ariaLabel: "Open main menu",
       focusElement: toggleMenuButton,
-      timeout: 1500,
     },
     {
       ariaLabel: "Close main menu (press Escape key)",
       focusElement: firstMenuItem,
-      timeout: 50,
     },
   ];
 
@@ -26,11 +24,8 @@ export default function Header(props) {
   };
 
   const [menuLabel, setMenuLabel] = useState("Open main menu");
-  const [menuInitialized, setMenuInitialized] = useState();
 
   const toggleMenuHandler = () => {
-    setMenuInitialized(true);
-    //toggleMenuButton.current.classList.toggle("open");
     props.onToggleMenu();
   };
 
@@ -46,83 +41,80 @@ export default function Header(props) {
     setTimeout(() => (location.hash = hash), 100);
   };
 
-  useEffect(() => {
-    /* menu */
-    if (menuInitialized) {
+  if (props.type === "index") {
+    useEffect(() => {
+      /* menu */
       const statusInt = +props.mobileMenuOpened;
       const settings = menuSettings[statusInt];
       setMenuLabel(settings.ariaLabel);
       settings.focusElement.current.focus();
-
-      // setTimeout(() => {
-      //   toggleMenuButton.current.setAttribute("data-animation", statusInt);
-      //   settings.focusElement.current.focus();
-      // }, settings.timeout);
-
-      // if (!props.mobileMenuOpened) {
-      //   setTimeout(() => {
-      //     toggleMenuButton.current.removeAttribute("data-animation", statusInt);
-      //     settings.focusElement.current.focus();
-      //   }, settings.timeout + 20);
-      // }
-    }
-  });
+    }, [props.mobileMenuOpened]);
+  }
 
   return (
     <header className={style.header}>
       <nav aria-label="Main" className={style["header__nav"]}>
-        <button
-          aria-expanded={props.mobileMenuOpened.toString()}
-          aria-live="polite"
-          ref={toggleMenuButton}
-          onClick={toggleMenuHandler}
-          className={`${style["header__toggle"]} ${style["header__toggle--menu"]}`}
-          aria-label={menuLabel}
-          hidden
-        >
-          <svg
-            viewBox="10 10 80 80"
-            className={style["header__toggle--menu-closed"]}
-          >
-            <path d="M30,37 L70,37 Z"></path>
-            <path d="M30,50 L70,50 Z"></path>
-            <path d="M30,63 L70,63 Z"></path>
-          </svg>
-          <svg
-            viewBox="10 10 80 80"
-            className={style["header__toggle--menu-open"]}
-          >
-            <path d="M30,30 L70,70 Z"></path>
-            <path d="M30,70 L70,30 Z"></path>
-          </svg>
-        </button>
+        {props.type === "index" && (
+          <>
+            <button
+              aria-expanded={props.mobileMenuOpened.toString()}
+              aria-live="polite"
+              ref={toggleMenuButton}
+              onClick={toggleMenuHandler}
+              className={`${style["header__toggle"]} ${style["header__toggle--menu"]}`}
+              aria-label={menuLabel}
+              hidden
+            >
+              <svg
+                viewBox="10 10 80 80"
+                className={style["header__toggle--menu-closed"]}
+              >
+                <path d="M30,37 L70,37 Z"></path>
+                <path d="M30,50 L70,50 Z"></path>
+                <path d="M30,63 L70,63 Z"></path>
+              </svg>
+              <svg
+                viewBox="10 10 80 80"
+                className={style["header__toggle--menu-open"]}
+              >
+                <path d="M30,30 L70,70 Z"></path>
+                <path d="M30,70 L70,30 Z"></path>
+              </svg>
+            </button>
 
-        <ul role="list" className={style["header__menu"]}>
-          <li>
-            <Link href="#about" ref={firstMenuItem} onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false">
-                <use xlinkHref="#svg-about"></use>
-              </svg>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="#skills" onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false">
-                <use xlinkHref="#svg-skills"></use>
-              </svg>
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link href="#inspiration" onClick={clickMenuHandler}>
-              <svg aria-hidden="true" focusable="false">
-                <use xlinkHref="#svg-inspiration"></use>
-              </svg>
-              Inspiration
-            </Link>
-          </li>
-        </ul>
+            <ul role="list" className={style["header__menu"]}>
+              <li>
+                <Link
+                  href="#about"
+                  ref={firstMenuItem}
+                  onClick={clickMenuHandler}
+                >
+                  <svg aria-hidden="true" focusable="false">
+                    <use xlinkHref="#svg-about"></use>
+                  </svg>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="#skills" onClick={clickMenuHandler}>
+                  <svg aria-hidden="true" focusable="false">
+                    <use xlinkHref="#svg-skills"></use>
+                  </svg>
+                  Skills
+                </Link>
+              </li>
+              <li>
+                <Link href="#inspiration" onClick={clickMenuHandler}>
+                  <svg aria-hidden="true" focusable="false">
+                    <use xlinkHref="#svg-inspiration"></use>
+                  </svg>
+                  Inspiration
+                </Link>
+              </li>
+            </ul>
+          </>
+        )}
+
         <button
           inert={props.mobileMenuOpened === true ? "" : null}
           id="theme-toggle"
