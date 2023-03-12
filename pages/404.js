@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Defaultlayout from "../components/layout/default";
 
@@ -89,8 +90,15 @@ const quotes = [
 ];
 
 export default function FourOhFour(props) {
+  const [citation, setCitation] = useState();
+
+  useEffect(() => {
+    const rnd = Math.floor(Math.random() * quotes.length);
+    setCitation(quotes[rnd]);
+  });
+
   return (
-    props && (
+    citation && (
       <Defaultlayout>
         <section className="_404">
           <h1>
@@ -100,9 +108,9 @@ export default function FourOhFour(props) {
 
           <div>
             <blockquote>
-              <p className="quote">{props.citation.quote}</p>
+              <p className="quote">{citation.quote}</p>
               <p className="source">
-                — {props.citation.author}, <i>{props.citation.book}</i>
+                — {citation.author}, <i>{citation.book}</i>
               </p>
             </blockquote>
           </div>
@@ -112,14 +120,4 @@ export default function FourOhFour(props) {
       </Defaultlayout>
     )
   );
-}
-
-export async function getStaticProps(context) {
-  const rnd = Math.floor(Math.random() * quotes.length);
-  const citation = quotes[rnd];
-  return {
-    props: {
-      citation,
-    },
-  };
 }
