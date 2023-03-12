@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <>
       <section aria-labelledby="content" className={style.section}>
-        <div>
+        <div className="section_cnt">
           <div>
             <h1 data-codeviewport>
               Hello
@@ -42,7 +42,7 @@ export default function Index() {
 
       <Fadein>
         <section aria-labelledby="about" className={style.section}>
-          <div>
+          <div className="section_cnt">
             <h2 id="about" tabIndex="-1" data-codeviewport>
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use xlinkHref="#svg-about"></use>
@@ -72,7 +72,7 @@ export default function Index() {
 
       <Fadein>
         <section aria-labelledby="skills" className={style.section}>
-          <div>
+          <div className="section_cnt">
             <h2 id="skills" tabIndex="-1">
               <svg aria-hidden="true" focusable="false" height="50" width="50">
                 <use xlinkHref="#svg-skills"></use>
@@ -106,24 +106,23 @@ export default function Index() {
 
                   <p>
                     I usually build styleguides in HTML, JavaScript and CSS/SASS
-                    (Fractal/Storybook) but I also create landing pages or
-                    static sites with a &ldquo;mobile-first&rdquo; approach. I
-                    do love CSS and I like creating inspiring demos on Codepen.
-                    Sometimes I get involved by participating in coding contests
-                    such as the{" "}
+                    (Fractal/Storybook) but I also create landing pages, static
+                    or nextJS sites with a &ldquo;mobile-first&rdquo; approach.
+                    I do love CSS and I like creating inspiring demos on
+                    Codepen. Sometimes I get involved by participating in coding
+                    contests such as the{" "}
                     <a
                       href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/"
                       target="_blank"
                     >
-                      “Code in the Dark” won in 2019
-                    </a>
-                    .
+                      “Code in the Dark” event
+                    </a>{" "}
+                    won in 2019.
                   </p>
                   <p>
-                    One year ago I started to explore ReactJS/NextJS studying
-                    many courses (Udemy/FrontendMasters) and trying to integrate
-                    these frameworks with Next-Auth, GraphQL, MongoDB,
-                    Contentful, AWS and Vercel.
+                    One year ago I started to explore ReactJS/NextJS and make
+                    integrations with Next-Auth, GraphQL, MongoDB, Contentful or
+                    AWS.
                   </p>
                 </div>
 
@@ -167,8 +166,8 @@ export default function Index() {
                     impairments.
                   </p>
                   <p>
-                    I'm often asked to make reports of some websites, to check
-                    their WCAG compliance and propose a list of strategies and
+                    I often prepare reports about the WCAG compliance of some
+                    websites, aiming to propose a list of strategies and
                     adjustments to remove or limit the main accessibility
                     issues.
                   </p>
@@ -189,9 +188,9 @@ export default function Index() {
 
       <Fadein>
         <section aria-labelledby="inspiration" className={style.section}>
-          <div>
+          <div className="section_cnt">
             <h2 id="inspiration" tabIndex="-1">
-              <svg aria-hidden="true" focusable="false" width="30" height="30">
+              <svg aria-hidden="true" focusable="false" width="50" height="50">
                 <use xlinkHref="#svg-inspiration"></use>
               </svg>
               <br />

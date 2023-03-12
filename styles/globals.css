@@ -40,7 +40,7 @@ html {
   --c_complementary: hsla(150, 35%, 44%, 1);
   --c_complementary-tr: hsla(147, 46%, 40%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
-  --c_gray: hsl(210, 8%, 54%);
+  --c_gray: hsl(210, 9%, 38%);
   --box-shadow: hsla(210, 34%, 88%, 0.5);
   --invert: 0;
   color-scheme: light;
@@ -54,6 +54,7 @@ html {
   --c_primary-tr: hsla(206, 50%, 77%, 0);
   --c_base_background: hsla(0, 0%, 0%, 1);
   --box-shadow: hsla(0, 2%, 5%, 0.5);
+  --c_gray: hsl(210, 9%, 62%);
   --invert: 1;
 }
 
@@ -66,6 +67,7 @@ html {
     --c_primary-tr: hsla(206, 50%, 77%, 0);
     --c_base_background: hsla(0, 0%, 0%, 1);
     --box-shadow: hsla(0, 2%, 5%, 0.95);
+    --c_gray: hsl(210, 9%, 62%);
     --invert: 1;
   }
 }
@@ -288,7 +290,6 @@ main:focus {
     opacity: 0.6;
     letter-spacing: 0;
     color: var(--c_gray);
-    text-shadow: 0 0 1px currentColor;
     background-size: 50px auto;
     background-repeat: no-repeat;
     inline-size: fit-content;
@@ -322,6 +323,11 @@ main:focus {
 
   [data-code-html="h2"]::after {
     transform: translate(100%, -25%);
+  }
+
+  [data-code-html="section"]::before {
+    top: 0;
+    bottom: auto;
   }
 }
 

@@ -219,7 +219,7 @@
     font: 1.5rem/1.5 "DarkerGrotesque-Medium";
     text-align: center;
     color: var(--c_primary);
-    max-inline-size: 66ch;
+    max-inline-size: 72ch;
     margin: 0 auto;
 
     & + p {
@@ -228,7 +228,7 @@
 
     a {
       color: var(--c_primary);
-
+      white-space: nowrap;
       :is(:link, :visited) {
         color: var(--c_primary);
       }
@@ -330,15 +330,16 @@
 
 /* cards */
 .cards {
-  position: relative;
   display: flex;
   flex-direction: column;
-  margin-block-start: 5rem;
-  padding-block-start: 5rem;
-  gap: 7rem;
+  margin-block-start: 6.5rem;
+  gap: 5rem;
 
   .card {
+    position: relative;
     border-radius: 0.6rem;
+    padding-block-start: 5rem;
+
     padding-block-end: 1rem;
     display: flex;
     flex-direction: column;
@@ -346,13 +347,13 @@
 
     @media (min-width: 64rem) {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-end;
       &:nth-child(even) {
         flex-direction: row-reverse;
       }
     }
 
-    &:first-child:before {
+    &:before {
       position: absolute;
       top: 0;
       left: 50%;
@@ -421,7 +422,7 @@
 
       figcaption {
         color: var(--c_gray);
-        font: 1.25rem "Caveat-Regular", serif;
+        font: 1.5rem "Caveat-Regular", serif;
         padding-block: 1.5rem;
         min-block-size: 3.6rem;
         background: none;

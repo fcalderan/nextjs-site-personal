@@ -49,7 +49,7 @@ export default function Footer(props) {
           </p>
 
           <p>
-            This site aims to be inclusive and WCAG/AA compliant: if you
+            This site wants to be inclusive and WCAG 2.1/AA compliant: if you
             encounter any accessibility issues or have feedback on how I can
             improve it, please let me know at{" "}
             <strong>

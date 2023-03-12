@@ -1,23 +1,17 @@
 @supports selector(:has(*)) {
-  .fade-in-section {
-    & section > div {
-      transition: opacity 0.6s ease-out 0.3s, transform 1.2s ease-out 0.3s;
-      will-change: opacity, transform;
-      transform: translateY(4rem);
-      opacity: 0;
-    }
+  .fade-in-section [class*="section_cnt"] {
+    transition: opacity 0.3s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+    will-change: opacity, transform;
+    transform: translateY(5rem);
+    opacity: 0;
   }
-  .fade-in-section.is-visible {
-    & section > div {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  .fade-in-section.is-visible [class*="section_cnt"] {
+    transform: translateY(0);
+    opacity: 1;
   }
-  .fade-in-section:has(:target) {
-    & section > div {
-      transition: none;
-      transform: translateY(0);
-      opacity: 1;
-    }
+  .fade-in-section:has(:target) [class*="section_cnt"] {
+    transition: none;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
