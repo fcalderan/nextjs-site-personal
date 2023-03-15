@@ -99,7 +99,7 @@ export default function Index() {
             <div className={style.cards}>
               <section
                 className={style.card}
-                aria-labelledby="about skills-frontend"
+                aria-labelledby="skill skills-frontend"
               >
                 <div>
                   <h3 id="skills-frontend">Front-end &amp; Frameworks</h3>
@@ -111,10 +111,7 @@ export default function Index() {
                     I do love CSS and I like creating inspiring demos on
                     Codepen. Sometimes I get involved by participating in coding
                     contests such as the{" "}
-                    <a
-                      href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/"
-                      target="_blank"
-                    >
+                    <a href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/">
                       “Code in the Dark” event
                     </a>{" "}
                     won in 2019.
@@ -139,7 +136,7 @@ export default function Index() {
 
               <section
                 className={style.card}
-                aria-labelledby="about skills-a11y"
+                aria-labelledby="skill skills-a11y"
                 data-codeviewport
               >
                 <div>
@@ -152,10 +149,7 @@ export default function Index() {
                     </span>{" "}
                     as an ongoing process during all the development phase. In
                     2022 I also completed the{" "}
-                    <a
-                      href="https://www.accessibilityassociation.org/s/wascertification"
-                      target="_blank"
-                    >
+                    <a href="https://www.accessibilityassociation.org/s/wascertification">
                       <abbr title="Internet Association of Accessibility Specialist">
                         IAAP
                       </abbr>
