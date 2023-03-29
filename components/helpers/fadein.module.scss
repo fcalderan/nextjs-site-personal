@@ -1,6 +1,6 @@
 @supports selector(:has(*)) {
   .fade-in-section [class*="section_cnt"] {
-    transition: opacity 0.3s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+    transition: opacity 0.3s ease-out 0.5s, transform 0.8s ease-out 0.5s;
     will-change: opacity, transform;
     transform: translateY(5rem);
     opacity: 0;

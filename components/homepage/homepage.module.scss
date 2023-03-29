@@ -112,10 +112,18 @@
   }
 }
 
+.title {
+  max-inline-size: 64rem;
+  h1 {
+    max-inline-size: 100%;
+    contain: layout;
+  }
+}
+
 .section {
   padding: var(--section-block-padding) var(--section-inline-padding);
   background-color: var(--c_base_background);
-  min-height: max(40vh, 25rem);
+  min-block-size: max(40vh, 25rem);
   contain: content;
 
   &[aria-labelledby="content"],
@@ -184,7 +192,7 @@
 
   h2 {
     font-size: clamp(2.5rem, 1.075rem + 2.4vw, 4rem);
-    letter-spacing: min(-0.1rem, -0.25vw);
+    letter-spacing: min(-0.1rem, -0.18vw);
     margin-block-end: 3rem;
     margin-inline: auto;
 
@@ -242,11 +250,8 @@
       }
 
       &:focus {
-        outline-color: currentColor;
-        outline-style: dotted;
-        outline-offset: 0;
-        padding: 0.2rem;
-        background: var(--c_base_background);
+        outline-color: var(--c_complementary);
+        outline-style: solid;
       }
     }
   }
@@ -317,15 +322,49 @@
       background-position: 0 100%;
       background-repeat: repeat-x;
     }
-
-    &[aria-labelledby="mentions"] {
-      background-image: linear-gradient(
-        to bottom,
-        var(--c_tertiary),
-        var(--c_base_background)
-      );
-    }
   }
+
+  // &[aria-labelledby="inspiration"] {
+  //   position: relative;
+  //   min-block-size: 40rem;
+  //   padding-block: 2.5rem;
+
+  //   [class*="section_cnt"] {
+  //     position: relative;
+  //     z-index: 2;
+  //     padding: 2.5rem;
+  //     border-radius: 1rem;
+
+  //     padding: inherit;
+  //     background: var(--c_tertiary_tr);
+  //   }
+
+  //   &::before {
+  //     content: "";
+  //     height: 5rem;
+  //     display: none;
+  //   }
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     inset: -10px;
+  //     z-index: -2;
+  //     background: url(/bg-cards2.jpg) 0 0 no-repeat;
+  //     background-size: cover;
+  //   }
+
+  //   @media (min-width: 48rem) {
+  //     padding-block: 2.5rem 7.5rem;
+
+  //     &::before {
+  //       display: block;
+  //     }
+  //     &::after {
+  //       inset: 5rem -10px -10px;
+  //     }
+  //   }
+  // }
 }
 
 /* cards */
@@ -446,5 +485,22 @@
         transform: scale(1.04) rotate(var(--rotation));
       }
     }
+  }
+}
+
+// ::view-transition-old(root),
+// ::view-transition-new(root) {
+//   animation-duration: 1s;
+// }
+/* inspiration */
+.inspirations {
+  display: grid;
+  --cols: 2;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-gap: 2rem;
+  margin: 2.5rem 0;
+
+  @media (min-width: 64rem) {
+    --cols: 3;
   }
 }

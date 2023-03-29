@@ -6,7 +6,7 @@ export default function Social() {
       <a
         href="https://twitter.com/fcalderan"
         target="_blank"
-        aria-label="My Twitter profile"
+        aria-label="My Twitter profile (open in a new window)"
       >
         <svg aria-hidden="true" focusable="false" width="30" height="30">
           <use xlinkHref="#svg-twitter"></use>
@@ -15,7 +15,7 @@ export default function Social() {
       <a
         href="https://front-end.social/@fcalderan"
         target="_blank"
-        aria-label="My Mastodon profile"
+        aria-label="My Mastodon profile (open in a new window)"
       >
         <svg aria-hidden="true" focusable="false" width="30" height="30">
           <use xlinkHref="#svg-mastodon"></use>
@@ -24,7 +24,7 @@ export default function Social() {
       <a
         href="https://stackoverflow.com/users/1098851/fabrizio-calderan"
         target="_blank"
-        aria-label="My Stackoverflow profile"
+        aria-label="My Stackoverflow profile (open in a new window)"
       >
         <svg aria-hidden="true" focusable="false" width="30" height="30">
           <use xlinkHref="#svg-so"></use>
@@ -33,7 +33,7 @@ export default function Social() {
       <a
         href="https://www.linkedin.com/in/fabriziocalderan/"
         target="_blank"
-        aria-label="My Linkedin profile"
+        aria-label="My Linkedin profile (open in a new window)"
       >
         <svg aria-hidden="true" focusable="false" width="30" height="30">
           <use xlinkHref="#svg-linkedin"></use>

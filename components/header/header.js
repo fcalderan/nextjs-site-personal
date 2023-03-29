@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import style from "./header.module.scss";
 
+let toggleMenuHandler, clickMenuHandler;
+
 export default function Header(props) {
   const firstMenuItem = useRef();
   const toggleMenuButton = useRef();
@@ -25,24 +27,24 @@ export default function Header(props) {
 
   const [menuLabel, setMenuLabel] = useState("Open main menu");
 
-  const toggleMenuHandler = () => {
-    props.onToggleMenu();
-  };
-
   const toggleThemeHandler = () => {
     const selectedTheme = props.currentTheme === "dark" ? "light" : "dark";
     props.onToggleTheme(selectedTheme, toggleThemeButton);
   };
 
-  const clickMenuHandler = (ev) => {
-    ev.preventDefault();
-    props.closeMobileMenu();
-    const hash = ev.target.getAttribute("href").replace(/^\//, "");
-    setTimeout(() => (location.hash = hash), 100);
-  };
-
   if (props.type === "index") {
     useEffect(() => {
+      toggleMenuHandler = () => {
+        props.onToggleMenu();
+      };
+
+      clickMenuHandler = (ev) => {
+        ev.preventDefault();
+        props.closeMobileMenu();
+        const hash = ev.target.getAttribute("href").replace(/^\//, "");
+        setTimeout(() => (location.hash = hash), 100);
+      };
+
       /* menu */
       const statusInt = +props.mobileMenuOpened;
       const settings = menuSettings[statusInt];
@@ -52,7 +54,7 @@ export default function Header(props) {
   }
 
   return (
-    <header className={style.header}>
+    <header className={`${style.header} ${props.type}`}>
       <nav aria-label="Main" className={style["header__nav"]}>
         {props.type === "index" && (
           <>
@@ -104,16 +106,18 @@ export default function Header(props) {
                 </Link>
               </li>
               <li>
-                <Link href="#inspiration" onClick={clickMenuHandler}>
+                <Link href="#inspirations" onClick={clickMenuHandler}>
                   <svg aria-hidden="true" focusable="false">
                     <use xlinkHref="#svg-inspiration"></use>
                   </svg>
-                  Inspiration
+                  Inspirations
                 </Link>
               </li>
             </ul>
           </>
         )}
+
+        {props.type === "default" && <Link href="/">Go to Homepage</Link>}
 
         <button
           inert={props.mobileMenuOpened === true ? "" : null}

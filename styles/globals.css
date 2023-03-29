@@ -8,38 +8,43 @@
 @font-face {
   font-family: "Inter-Medium"; /* 109kb */
   font-weight: 500;
-  font-display: block;
+  unicode-range: U+0025-0080;
+  font-display: swap;
   src: url(/fonts/Inter-Medium.woff2) format("woff2");
 }
 @font-face {
   font-family: "Inter-ExtraBold"; /* 109kb */
   font-weight: 800;
-  font-display: block;
+  unicode-range: U+0025-0080;
+  font-display: swap;
   src: url(/fonts/Inter-ExtraBold.woff2) format("woff2");
 }
 @font-face {
   font-family: "DarkerGrotesque-Medium"; /* 39kb */
   font-weight: 500;
-  font-display: block;
+  font-display: swap;
   src: url(/fonts/DarkerGrotesque-Medium.woff2) format("woff2");
 }
 @font-face {
   font-family: "Caveat-Regular"; /* 103kb */
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(/fonts/Caveat-Regular.woff2) format("woff2");
 }
 
 /* Variables */
 html {
   --c_tertiary: hsla(213, 73%, 97%, 1);
+  --c_tertiary_tr: hsla(213, 73%, 97%, 0.75);
   --c_secondary: hsla(210, 29%, 45%, 1);
   --c_secondary-tr: hsla(210, 29%, 45%, 0);
   --c_primary: hsla(206, 50%, 31%, 1);
   --c_primary-tr: hsla(206, 50%, 31%, 0);
-  --c_complementary: hsla(150, 35%, 44%, 1);
-  --c_complementary-tr: hsla(147, 46%, 40%, 0);
+  /* --c_complementary: hsla(150, 35%, 44%, 1); */
+  --c_complementary: hsla(87, 35%, 44%, 1);
+  --c_complementary-tr: hsla(87, 35%, 44%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
+  --c_base_background_tr: hsla(0, 0%, 100%, 0.6);
   --c_gray: hsl(210, 9%, 38%);
   --box-shadow: hsla(210, 34%, 88%, 0.5);
   --invert: 0;
@@ -48,11 +53,14 @@ html {
 
 [data-theme="dark"] {
   --c_tertiary: hsla(206, 26%, 17%, 1);
+  --c_tertiary_tr: hsla(206, 26%, 17%, 0.75);
   --c_secondary: hsla(206, 54%, 59%, 1);
   --c_secondary-tr: hsla(206, 54%, 59%, 0);
   --c_primary: hsla(206, 50%, 77%, 1);
   --c_primary-tr: hsla(206, 50%, 77%, 0);
+  --c_complementary: hsla(87, 35%, 50%, 1);
   --c_base_background: hsla(0, 0%, 0%, 1);
+  --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
   --box-shadow: hsla(0, 2%, 5%, 0.5);
   --c_gray: hsl(210, 9%, 62%);
   --invert: 1;
@@ -61,11 +69,15 @@ html {
 @media (prefers-color-scheme: dark) {
   html {
     --c_tertiary: hsla(206, 26%, 17%, 1);
+    --c_tertiary_tr: hsla(206, 26%, 17%, 0.75);
+
     --c_secondary: hsla(206, 54%, 59%, 1);
     --c_secondary-tr: hsla(206, 54%, 59%, 0);
     --c_primary: hsla(206, 50%, 77%, 1);
     --c_primary-tr: hsla(206, 50%, 77%, 0);
+    --c_complementary: hsla(87, 35%, 50%, 1);
     --c_base_background: hsla(0, 0%, 0%, 1);
+    --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
     --box-shadow: hsla(0, 2%, 5%, 0.95);
     --c_gray: hsl(210, 9%, 62%);
     --invert: 1;
@@ -162,6 +174,7 @@ ul {
 :focus {
   outline: 3px currentColor dashed;
   outline-offset: 3px;
+  border-block-end-color: transparent !important;
 }
 
 :target {
@@ -245,10 +258,18 @@ main:focus {
   outline: 0;
 }
 
+/* section {
+  contain: layout;
+} */
+
+/* main::after {
+  content: "";
+} */
+
 @media (min-width: 48rem) {
   main {
-    background-image: url(/img/bg-divider-light-1.svg);
     padding-block-end: 9.9%;
+    background-image: url(/img/bg-divider-light-1.svg);
     background-repeat: no-repeat;
     background-position: 0 100%;
     background-size: contain;
@@ -332,5 +353,96 @@ main:focus {
 }
 
 /* 404 */
-._404 {
+.err404 {
+  padding: var(--section-block-padding) var(--section-inline-padding);
+  background: var(--c_base_background);
+}
+.err404 h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter-ExtraBold", Arial;
+  line-height: 1.1;
+  text-align: center;
+  word-spacing: 0.1em;
+  inline-size: fit-content;
+
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    120deg,
+    var(--c_complementary) 33%,
+    var(--c_complementary-tr) 33.15%,
+    var(--c_secondary-tr) 33.35%,
+
+    var(--c_secondary) 33.5%,
+    var(--c_secondary) 66%,
+    var(--c_secondary-tr) 66.15%,
+
+    var(--c_primary-tr) 66.35%,
+    var(--c_primary) 66.5%
+  );
+
+  font-size: clamp(3.5rem, 2.075rem + 4.5vw, 6rem);
+  letter-spacing: min(-0.2rem, -0.35vw);
+  margin-block-end: 3rem;
+  max-inline-size: 100%;
+  margin-inline: auto;
+}
+
+.err404 > figure {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+.err404 blockquote {
+  width: fit-content;
+  font-style: italic;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  quotes: "\201D""\201C""\2018""\2019";
+}
+
+.err404 blockquote p {
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+.err404 blockquote::before {
+  content: open-quote;
+  position: absolute;
+  left: 0;
+  line-height: 0;
+  font-size: 300%;
+}
+.err404 blockquote::after {
+  content: close-quote;
+  position: absolute;
+  right: 0;
+  line-height: 0;
+  font-size: 300%;
+}
+
+.err404 figcaption {
+  font-size: 88%;
+  margin-block-start: 1rem;
+}
+
+.err404 cite {
+  display: block;
+}
+
+.err404 .go {
+  display: block;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  width: max-content;
+  margin: 0 auto;
+  line-height: normal;
+  color: var(--c_secondary);
+  text-decoration: none;
+  border-block-end: 2px solid;
+  opacity: 0.85;
+  transition: opacity 0.33s 0s;
+}
+
+.err404 .go:hover {
+  opacity: 1;
 }

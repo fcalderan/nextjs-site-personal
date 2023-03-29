@@ -1,17 +1,19 @@
 import style from "./homepage.module.scss";
 import Social from "../social/social";
+import Card from "../card/card";
 import Fadein from "../helpers/fadein";
 import Image from "next/image";
+import Link from "next/link";
 
 import skill1 from "../../public/img/code-in-the-dark.jpg";
 import skill2 from "../../public/img/iaap-was-certificate.jpg";
 
-export default function Index() {
+export default function Index(props) {
   return (
     <>
       <section aria-labelledby="content" className={style.section}>
         <div className="section_cnt">
-          <div>
+          <div className={style.title}>
             <h1 data-codeviewport>
               Hello
               <span aria-hidden="true" data-code-html="h1">
@@ -31,6 +33,7 @@ export default function Index() {
             <div>
               <img
                 width="230"
+                height="230"
                 src="/img/me-front2.png"
                 alt="my portrait, a not-so-young but still curious developer"
               />
@@ -82,17 +85,16 @@ export default function Index() {
 
             <p>
               Throughout my professional journey I gained a lot of knowledge by
-              working on several projects for many international customers (like
+              working on several projects for many international companies (like
               Diesel, <span lang="it">Illy</span>, Whirlpool,
               <span lang="it">Telecom Italia</span>, Gore, Nike and many more).
             </p>
             <p data-codeviewport>
-              My toolset includes Atom, VSCode, Git, Figma, Sketch, Adobe
-              Photoshop
+              My daily tools includes Atom, VSCode, Git, Figma
               <span aria-hidden="true" data-code-css="p:last-of-type">
                 ,
               </span>{" "}
-              and the OSx Terminal.
+              Sketch and the OSx Terminal (plus Udemy and ChatGPT for learning).
             </p>
 
             <div className={style.cards}>
@@ -149,14 +151,11 @@ export default function Index() {
                     as an ongoing process during all the development phase. In
                     2022 I also completed the{" "}
                     <a href="https://www.accessibilityassociation.org/s/wascertification">
-                      <abbr title="Internet Association of Accessibility Specialist">
-                        IAAP
-                      </abbr>
-                      /<abbr title="Web Accessibility Specialist">WAS</abbr>
+                      <abbr title="Web Accessibility Specialist">WAS</abbr> (Web
+                      Accessibility Specialist) course
                     </a>{" "}
-                    course (by Deque University) and I improved myself in the
-                    creation of a better web experience for people with
-                    impairments.
+                    (by Deque University) and I improved myself in the creation
+                    of a better web experience.
                   </p>
                   <p>
                     I often prepare reports about the WCAG compliance of some
@@ -180,20 +179,26 @@ export default function Index() {
       </Fadein>
 
       <Fadein>
-        <section aria-labelledby="inspiration" className={style.section}>
+        <section aria-labelledby="inspirations" className={style.section}>
           <div className="section_cnt">
-            <h2 id="inspiration" tabIndex="-1">
+            <h2 id="inspirations" tabIndex="-1">
               <svg aria-hidden="true" focusable="false" width="50" height="50">
                 <use xlinkHref="#svg-inspiration"></use>
               </svg>
               <br />
-              Inspiration
+              Inspirations
             </h2>
 
             <p>
               Some of my latest projects, ideas or just experiments led by
               serendipity.
             </p>
+
+            <div className={style.inspirations}>
+              {props.inspirations.map((i) => {
+                return <Card inspiration={i} key={i.sys.id} />;
+              })}
+            </div>
           </div>
         </section>
       </Fadein>

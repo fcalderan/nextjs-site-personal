@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Indexlayout from "../components/layout/index";
-import Homepage from "../components/homepage/homepage";
-import getContentfulClient from "../lib/db";
+import Defaultlayout from "../../components/layout/default";
 
 const metadata = {
   url: "https//fabrizio.dev/",
@@ -12,9 +10,9 @@ const metadata = {
   image: "https//fabrizio.dev/share.jpg",
 };
 
-export default function Index(props) {
+export default function Index() {
   return (
-    <Indexlayout>
+    <Defaultlayout>
       <Head>
         <title>{metadata.title}</title>
         <meta name="title" content={metadata.title} />
@@ -37,20 +35,20 @@ export default function Index(props) {
         <meta name="thumb" content={metadata.image} />
       </Head>
 
-      <Homepage inspirations={props.inspirations} />
-    </Indexlayout>
+      <div>hello</div>
+    </Defaultlayout>
   );
 }
 
-export async function getStaticProps(context) {
-  const client = await getContentfulClient();
-  const inspirations = await client.getEntries({
-    content_type: "inspirations",
-  });
-
+export async function getStaticPaths(context) {
   return {
-    props: {
-      inspirations: inspirations.items,
-    },
+    paths: [],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: {},
   };
 }

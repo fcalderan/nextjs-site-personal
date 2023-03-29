@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
@@ -7,21 +7,21 @@ export default function Indexlayout(props) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [theme, setTheme] = useState();
 
-  const toggleThemeHandler = (selectedState, toggleThemeButton) => {
+  const toggleThemeHandler = useCallback((selectedState, toggleThemeButton) => {
     localStorage.setItem("theme", selectedState);
     setTheme((_) => selectedState);
     toggleThemeButton.current.focus();
-  };
+  });
 
-  const toggleMenuHandler = () => {
+  const toggleMenuHandler = useCallback(() => {
     setMobileMenuOpened((prevState) => !prevState);
-  };
+  });
 
-  const closeMobileMenu = () => {
+  const closeMobileMenu = useCallback(() => {
     if (mobileMenuOpened) {
       setMobileMenuOpened(false);
     }
-  };
+  });
 
   const getThemePreference = () => {
     const mq = "(prefers-color-scheme: dark)";
@@ -35,30 +35,43 @@ export default function Indexlayout(props) {
 
   useEffect(() => {
     const currentTheme = getThemePreference();
+    setTheme(currentTheme);
 
     /* close mobile menu on resize */
-    window.matchMedia("(min-width: 48rem)").addEventListener("change", () => {
+    const menuHandler = () => {
       closeMobileMenu();
-    });
+    };
 
     /* detect ESC key */
-    document.body.addEventListener("keyup", (ev) => {
+    const keyUpHandler = (ev) => {
       if (ev.key === "Escape" && mobileMenuOpened) {
-        closeMobileMenu();
+        menuHandler();
       }
-    });
+    };
 
-    /* load theme information */
-    setTheme(currentTheme);
-    document.documentElement.dataset.theme = currentTheme;
-  });
+    window
+      .matchMedia("(min-width: 48rem)")
+      .addEventListener("change", menuHandler);
+    document.body.addEventListener("keyup", keyUpHandler);
+
+    return () => {
+      window
+        .matchMedia("(min-width: 48rem)")
+        .removeEventListener("change", menuHandler);
+      document.body.removeEventListener("keyup", keyUpHandler);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   return (
     <>
       <SymbolsSVG />
 
       {/* This condition can be removed when Firefox
-       * will implement by default the "inert" attribute
+       * will implement the "inert" attribute
        */}
       {mobileMenuOpened !== true && (
         <a
@@ -76,6 +89,7 @@ export default function Indexlayout(props) {
         closeMobileMenu={closeMobileMenu}
         mobileMenuOpened={mobileMenuOpened}
         currentTheme={theme}
+        key="header"
         type="index"
       />
 

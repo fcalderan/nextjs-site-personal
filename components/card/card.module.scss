@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+  border: 1px var(--c_base_background) solid;
+  border-radius: 5px;
+  padding: 1rem;
+  color: var(--box-shadow);
+  box-shadow: 0 1px 1px currentColor, 0 2px 6px currentColor,
+    0 4px 10px currentColor, 0 8px 14px currentColor, 0 12px 16px currentColor;
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+  figcaption {
+    color: var(--c_secondary);
+    display: flex;
+    flex-direction: column;
+    //font: 1.5rem "Caveat-Regular", serif;
+
+    a,
+    a:link,
+    a:visited {
+      color: inherit;
+    }
+
+    time {
+      align-self: flex-end;
+      margin-block-end: 1.5rem;
+      font: 1.5rem "Caveat-Regular", serif;
+    }
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    aspect-ratio: 52/31;
+  }
+}

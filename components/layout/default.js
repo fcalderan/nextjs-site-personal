@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
@@ -6,15 +6,11 @@ import Footer from "../footer/footer";
 export default function Defaultlayout(props) {
   const [theme, setTheme] = useState();
 
-  const toggleThemeHandler = (selectedState, toggleThemeButton) => {
+  const toggleThemeHandler = useCallback((selectedState, toggleThemeButton) => {
     localStorage.setItem("theme", selectedState);
     setTheme((_) => selectedState);
     toggleThemeButton.current.focus();
-  };
-
-  const toggleMenuHandler = () => {
-    setMobileMenuOpened((prevState) => !prevState);
-  };
+  });
 
   const getThemePreference = () => {
     const mq = "(prefers-color-scheme: dark)";
@@ -28,16 +24,12 @@ export default function Defaultlayout(props) {
 
   useEffect(() => {
     const currentTheme = getThemePreference();
-
-    /* close mobile menu on resize */
-    window.matchMedia("(min-width: 48rem)").addEventListener("change", () => {
-      closeMobileMenu();
-    });
-
-    /* load theme information */
     setTheme(currentTheme);
-    document.documentElement.dataset.theme = currentTheme;
-  });
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   return (
     <>
@@ -47,6 +39,7 @@ export default function Defaultlayout(props) {
         onToggleTheme={toggleThemeHandler}
         currentTheme={theme}
         type="default"
+        key="header"
       />
 
       <main id="content" tabIndex="-1">

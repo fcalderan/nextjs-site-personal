@@ -9,14 +9,14 @@ export default function FadeInSection(props) {
     const observer = new IntersectionObserver((element) => {
       const isIntersecting = element[0].isIntersecting;
       setVisible(isIntersecting);
-      if (isIntersecting) {
+      if (isIntersecting && domRef.current) {
         observer.unobserve(domRef.current);
       }
     });
     setTimeout(() => {
-      observer.observe(domRef.current);
+      domRef.current && observer.observe(domRef.current);
     }, 100);
-    return () => observer.unobserve(domRef.current);
+    return () => domRef.current && observer.unobserve(domRef.current);
   }, [isVisible]);
   return (
     <div
