@@ -172,17 +172,19 @@
       letter-spacing: 0;
       word-spacing: normal;
       margin-inline: auto;
-      margin-block-start: 0.5rem;
-      font: max(1.75rem, 30%) "DarkerGrotesque-Medium", arial;
-      -webkit-background-clip: inherit;
-      color: inherit;
-      background-image: linear-gradient(
-        120deg,
-        var(--c_complementary) 33%,
-        var(--c_secondary) 0%,
-        var(--c_secondary) 66%,
-        var(--c_primary) 0
-      );
+      margin-block-start: 1.25rem;
+      font: max(1.25rem, 25%) "Merriweather-Light", arial;
+      //color: var(--c_primary);
+      background: none;
+      // -webkit-background-clip: inherit;
+      // color: inherit;
+      // background-image: linear-gradient(
+      //   120deg,
+      //   var(--c_complementary) 33%,
+      //   var(--c_secondary) 0%,
+      //   var(--c_secondary) 66%,
+      //   var(--c_primary) 0
+      // );
       @media (min-width: 64rem) {
         margin-inline-start: 0.15em;
       }
@@ -223,14 +225,14 @@
   }
 
   p {
-    font: 1.5rem/1.5 "DarkerGrotesque-Medium";
+    font: 1.25rem/1.75 "Merriweather-Light";
     text-align: center;
     color: var(--c_primary);
     max-inline-size: 72ch;
     margin: 0 auto;
 
     & + p {
-      margin-block-start: 1.5em;
+      margin-block-start: 2.25em;
     }
 
     a {
@@ -412,12 +414,12 @@
         block-size: 100%;
         display: block;
         object-fit: "contain";
-        filter: #{"invert" }(var(--invert));
+        filter: Invert(var(--invert));
       }
 
       figcaption {
         color: var(--c_gray);
-        font: 1.5rem "Caveat-Regular", serif;
+        font: 1.5rem "Indieflower", serif;
         padding-block: 1.5rem;
         min-block-size: 3.6rem;
         background: none;

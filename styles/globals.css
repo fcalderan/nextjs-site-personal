@@ -19,17 +19,32 @@
   font-display: swap;
   src: url(/fonts/Inter-ExtraBold.woff2) format("woff2");
 }
-@font-face {
-  font-family: "DarkerGrotesque-Medium"; /* 39kb */
+/* @font-face {
+  font-family: "DarkerGrotesque-Medium"; 
   font-weight: 500;
   font-display: swap;
   src: url(/fonts/DarkerGrotesque-Medium.woff2) format("woff2");
-}
-@font-face {
-  font-family: "Caveat-Regular"; /* 103kb */
+} 
+*/
+/* @font-face {
+  font-family: "Caveat-Regular"; 
   font-weight: 400;
   font-display: swap;
   src: url(/fonts/Caveat-Regular.woff2) format("woff2");
+} */
+
+@font-face {
+  font-family: "Indieflower"; /* 25kb */
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/IndieFlower-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Merriweather-Light"; /* 58kb */
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/Merriweather-Light.woff2) format("woff2");
 }
 
 /* Variables */
@@ -58,8 +73,8 @@ html {
   --c_tertiary_tr: hsla(206, 26%, 17%, 0.75);
   --c_secondary: hsla(206, 54%, 59%, 1);
   --c_secondary-tr: hsla(206, 54%, 59%, 0);
-  --c_primary: hsla(206, 50%, 77%, 1);
-  --c_primary-tr: hsla(206, 50%, 77%, 0);
+  --c_primary: hsla(206, 26%, 79%, 1);
+  --c_primary-tr: hsla(206, 26%, 79%, 0);
   --c_complementary: hsla(87, 35%, 50%, 1);
   --c_base_background: hsla(0, 0%, 0%, 1);
   --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
@@ -75,8 +90,8 @@ html {
 
     --c_secondary: hsla(206, 54%, 59%, 1);
     --c_secondary-tr: hsla(206, 54%, 59%, 0);
-    --c_primary: hsla(206, 50%, 77%, 1);
-    --c_primary-tr: hsla(206, 50%, 77%, 0);
+    --c_primary: hsla(206, 26%, 79%, 1);
+    --c_primary-tr: hsla(206, 26%, 79%, 0);
     --c_complementary: hsla(87, 35%, 50%, 1);
     --c_base_background: hsla(0, 0%, 0%, 1);
     --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
@@ -113,6 +128,7 @@ body {
   text-rendering: optimizeSpeed;
   min-block-size: 100%;
   font: 1.5rem/1.5 "DarkerGrotesque-Medium", sans-serif;
+  font: 1.5rem/1.5 "Merriweather-Light", serif;
 }
 
 @media (min-width: 48rem) {
@@ -158,6 +174,12 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+p {
+  line-height: 1.75;
+  word-spacing: 0.15rem;
+  letter-spacing: 0;
 }
 
 .sr-only {
@@ -276,7 +298,7 @@ main:focus {
     position: absolute;
     z-index: 1;
     display: block;
-    font: max(40%, 1.6rem) "Caveat-Regular", serif;
+    font: max(40%, 1.5rem) "Indieflower", serif;
     opacity: 0.6;
     letter-spacing: 0;
     color: var(--c_gray);

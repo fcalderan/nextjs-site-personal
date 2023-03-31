@@ -1,24 +1,42 @@
 import Prism from "prismjs";
 import "prismjs/plugins/autoloader/prism-autoloader";
-import "prismjs/themes/prism-coy.min.css";
+import "prismjs/themes/prism.css";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Contentblock(props) {
+  const ref = useRef();
   const content = props.data.content[0];
   const isCodeBlock = content.marks[0]?.type === "code";
 
   useEffect(() => {
-    Prism.highlightAll();
-  });
+    if (ref.current) {
+      Prism.highlightElement(ref.current);
+    }
+  }, []);
 
   if (isCodeBlock) {
+    const [, lang, code] = content.value.match(/^\^(\w+?)\^([\s\S]+)/);
     return (
-      <pre>
-        <code className="language-css">{content.value}</code>
-      </pre>
+      <div className="codeblock">
+        <pre>
+          <code ref={ref} className={`language-${lang}`}>
+            {code}
+          </code>
+        </pre>
+      </div>
     );
-  }
+  } else {
+    let markup = content.value;
 
-  return <p>{content.value}</p>;
+    /* replace links */
+    markup = markup.replace(/\[(.+?)\]\((.+?)\)/g, (m, text, link) => {
+      return `<a href="${link}">${text}</a>`;
+    });
+
+    markup = markup.replace(/`(.+?)`/g, (m, inlinecode) => {
+      return `<code>${inlinecode}</code>`;
+    });
+    return <p dangerouslySetInnerHTML={{ __html: markup }} />;
+  }
 }

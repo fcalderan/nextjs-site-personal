@@ -11,7 +11,6 @@ export default function Card(props) {
   const title = field.title;
   const description = field.description;
 
-  console.log(field);
   return (
     <div className={style.card}>
       <article>

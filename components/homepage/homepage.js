@@ -22,7 +22,7 @@ export default function Index(props) {
               <br />
               <span>Fabrizio Calderan</span>
               <br />
-              <small>a frontend developer based in Treviso area, Italy</small>
+              <small>A frontend developer based in Treviso area, Italy</small>
             </h1>
 
             <Social />
@@ -83,7 +83,7 @@ export default function Index(props) {
             </h2>
 
             <p>
-              Throughout my professional journey I gained a lot of knowledge by
+              Throughout my professional journey I gained a lot of experience by
               working on several projects for many international companies (like
               Diesel, <span lang="it">Illy</span>, Whirlpool,
               <span lang="it">Telecom Italia</span>, Gore, Nike and many more).
@@ -114,7 +114,7 @@ export default function Index(props) {
                     <a href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/">
                       “Code in the Dark” event
                     </a>{" "}
-                    won in 2019.
+                    I won in 2019.
                   </p>
                   <p>
                     One year ago I started to explore ReactJS/NextJS and make
