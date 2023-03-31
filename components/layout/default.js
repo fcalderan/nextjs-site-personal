@@ -34,6 +34,10 @@ export default function Defaultlayout(props) {
     <>
       <SymbolsSVG />
 
+      <a href="#content" className="skiplink">
+        Skip to main content
+      </a>
+
       <Header
         onToggleTheme={toggleThemeHandler}
         currentTheme={theme}

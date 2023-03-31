@@ -45,6 +45,7 @@
     max-width: 100%;
     min-width: 0;
     border-radius: 10px;
+    display: block;
     border: 5px var(--c_complementary) solid;
   }
 
@@ -129,6 +130,13 @@
 
     > h1 {
       flex-basis: 60%;
+    }
+
+    a,
+    a:link,
+    a:visited {
+      color: var(--c_primary);
+      border-radius: 5px;
     }
   }
 

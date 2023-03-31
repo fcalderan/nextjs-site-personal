@@ -1,8 +1,14 @@
 import style from "./inspiration.module.scss";
 import Contentblock from "../contentblock/contentblock";
+import Link from "next/link";
+
+const ConditionalWrapper = ({ condition, wrapper, children }) =>
+  condition ? wrapper(children) : children;
 
 export default function Inspiration(props) {
   const data = props.data;
+
+  console.log(data);
 
   return (
     <>
@@ -11,10 +17,17 @@ export default function Inspiration(props) {
           <div className={style.title}>
             {" "}
             <h1>{data.title}</h1>
-            <img
-              src={data.imagePost.fields.file.url}
-              alt={data.imagePost.description}
-            />
+            <ConditionalWrapper
+              condition={data.demoUrl !== ""}
+              wrapper={(children) => (
+                <Link href={data.demoUrl}>{children}</Link>
+              )}
+            >
+              <img
+                src={data.imagePost.fields.file.url}
+                alt={data.imagePost.fields.description}
+              />
+            </ConditionalWrapper>
           </div>
         </div>
         <div className={style.section_cnt}>
