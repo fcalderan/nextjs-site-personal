@@ -14,13 +14,12 @@ export default function Index(props) {
         <div className="section_cnt">
           <div className={style.title}>
             <h1 data-codeviewport>
-              Hello
-              <span aria-hidden="true" data-code-html="h1">
-                ,
-              </span>{" "}
-              I am
+              Hello. I am
               <br />
               <span>Fabrizio Calderan</span>
+              <span aria-hidden="true" data-code-html="h1">
+                .
+              </span>
               <br />
               <small>A frontend developer based in Treviso area, Italy</small>
             </h1>
