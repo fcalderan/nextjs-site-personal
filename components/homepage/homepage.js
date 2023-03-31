@@ -84,7 +84,7 @@ export default function Index(props) {
             <p>
               Throughout my professional journey I gained a lot of experience by
               working on several projects for many international companies (like
-              Diesel, <span lang="it">Illy</span>, Whirlpool,
+              Diesel, <span lang="it">Illy</span>, Whirlpool,{" "}
               <span lang="it">Telecom Italia</span>, Gore, Nike and many more).
             </p>
             <p data-codeviewport>
