@@ -1,3 +1,4 @@
+import { TwitterTweetEmbed } from "react-twitter-embed";
 import Prism from "prismjs";
 import "prismjs/plugins/autoloader/prism-autoloader";
 import "prismjs/themes/prism.css";
@@ -29,6 +30,16 @@ export default function Contentblock(props) {
   } else {
     let markup = content.value;
 
+    const tweet = markup.match(/^\[tweetembed=(\d+?)\]$/);
+    console.log(markup, tweet);
+    if (tweet && tweet[1]) {
+      return (
+        <div class="tweetembed">
+          <TwitterTweetEmbed tweetId={tweet[1]} />
+        </div>
+      );
+    }
+
     /* replace links */
     markup = markup.replace(/\[(.+?)\]\((.+?)\)/g, (m, text, link) => {
       return `<a href="${link}">${text}</a>`;
@@ -37,6 +48,7 @@ export default function Contentblock(props) {
     markup = markup.replace(/`(.+?)`/g, (m, inlinecode) => {
       return `<code>${inlinecode}</code>`;
     });
+
     return <p dangerouslySetInnerHTML={{ __html: markup }} />;
   }
 }

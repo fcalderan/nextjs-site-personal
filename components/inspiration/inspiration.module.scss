@@ -188,8 +188,17 @@
 
   code[class] {
     font-size: 0.75em !important;
-    // border-inline-start: 10px var(--c_complementary) solid !important;
-    // box-shadow: 0 0 0 1px #ccc !important;
+
+    [class*="token"] {
+      &[class*="selector"],
+      &[class*="attr-name"] {
+        color: #360;
+      }
+      &[class*="function"],
+      &[class*="class-name"] {
+        color: #60754f;
+      }
+    }
   }
 
   pre {
@@ -206,5 +215,14 @@
 
   [class="codeblock"]:focus-within {
     outline: 3px solid var(--c_primary);
+  }
+
+  :global(.tweetembed) {
+    margin: 2.5rem auto;
+    text-align: center;
+
+    [class*="twitter-tweet"] {
+      margin: 0 auto;
+    }
   }
 }

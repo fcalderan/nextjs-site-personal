@@ -17,6 +17,7 @@ export default function Index(props) {
   return (
     <Indexlayout>
       <Head>
+        <title>{metadata.title}</title>
         <Metadata metadata={metadata} />
       </Head>
 

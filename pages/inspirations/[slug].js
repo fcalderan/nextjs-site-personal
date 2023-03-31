@@ -18,6 +18,7 @@ export default function InspirationSlug(props) {
   return (
     <Defaultlayout>
       <Head>
+        <title>{metadata.title}</title>
         <Metadata metadata={metadata} />
       </Head>
 

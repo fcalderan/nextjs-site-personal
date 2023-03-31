@@ -8,7 +8,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) =>
 export default function Inspiration(props) {
   const data = props.data;
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Inspiration(props) {
               )}
             >
               <img
-                src={data.imagePost.fields.file.url}
+                src={`https:${data.imagePost.fields.file.url}`}
                 alt={data.imagePost.fields.description}
               />
             </ConditionalWrapper>

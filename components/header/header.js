@@ -117,7 +117,7 @@ export default function Header(props) {
           </>
         )}
 
-        {props.type === "default" && <Link href="/">Go to Homepage</Link>}
+        {props.type === "default" && <Link href="/">Homepage</Link>}
 
         <button
           inert={props.mobileMenuOpened === true ? "" : null}
