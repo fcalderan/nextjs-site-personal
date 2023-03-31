@@ -9,23 +9,31 @@ export default function Card(props) {
   const image = field.imageCard.fields;
   const postUrl = `/inspirations/${field.slug}`;
   const title = field.title;
+  const description = field.description;
 
   console.log(field);
   return (
     <div className={style.card}>
-      <figure>
+      <article>
         <img
           src={`https:${image.file.url}`}
           alt={image.description}
           loading="lazy"
         />
 
-        <figcaption>
-          <time dateTime={createdAt}>{createdAtLabel}</time>
+        <header>
+          <h3>
+            <Link href={postUrl}>{title}</Link>
+          </h3>
+        </header>
 
-          <Link href={postUrl}>{title}</Link>
-        </figcaption>
-      </figure>
+        <p>
+          {description}
+          <br />
+          <span className="sr-only">Post created at</span>
+          <time dateTime={createdAt}>{createdAtLabel}</time>
+        </p>
+      </article>
     </div>
   );
 }

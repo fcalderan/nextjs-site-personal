@@ -41,13 +41,15 @@ html {
   --c_primary: hsla(206, 50%, 31%, 1);
   --c_primary-tr: hsla(206, 50%, 31%, 0);
   /* --c_complementary: hsla(150, 35%, 44%, 1); */
-  --c_complementary: hsla(87, 35%, 44%, 1);
+  --c_complementary: hsla(87, 44%, 44%, 1);
   --c_complementary-tr: hsla(87, 35%, 44%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
   --c_base_background_tr: hsla(0, 0%, 100%, 0.6);
   --c_gray: hsl(210, 9%, 38%);
   --box-shadow: hsla(210, 34%, 88%, 0.5);
   --invert: 0;
+  --skip-block-size: 3rem;
+
   color-scheme: light;
 }
 
@@ -184,8 +186,6 @@ ul {
 }
 
 .skiplink {
-  --skip-block-size: 3rem;
-
   position: fixed;
   display: block;
   z-index: 20;
@@ -204,15 +204,7 @@ ul {
   color: var(--c_primary);
   transform: translateY(-100%);
   transition: transform var(--skip-slide-duration) 0s;
-  font: 0.85rem / var(--skip-block-size) "Inter";
-
-  &:focus {
-    transform: translateY(0);
-  }
-
-  &:focus ~ header {
-    transform: translateY(var(--skip-block-size));
-  }
+  font: 500 0.85rem/3rem "Inter-Medium";
 }
 
 .symbols {
@@ -224,34 +216,11 @@ ul {
   z-index: 1;
 }
 
-.skiplink {
-  position: fixed;
-  display: block;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  outline: 2px var(--c_primary) solid;
-  outline-offset: -4px;
-  inline-size: 100%;
-  block-size: 3rem;
-  margin: 0;
-  white-space: nowrap;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.16rem;
-  text-decoration: none;
-  background: var(--c_tertiary);
-  color: var(--c_primary);
-  transform: translateY(-100%);
-  transition: transform var(--skip-slide-duration) 0s;
-  font: 500 0.85rem/3rem "Inter-Medium";
-}
-
 .skiplink:focus {
   transform: translateY(0);
 }
 .skiplink:focus ~ header {
-  transform: translateY(3rem);
+  transform: translateY(var(--skip-block-size));
 }
 
 main:focus {

@@ -3,7 +3,6 @@ import Social from "../social/social";
 import Card from "../card/card";
 import Fadein from "../helpers/fadein";
 import Image from "next/image";
-import Link from "next/link";
 
 import skill1 from "../../public/img/code-in-the-dark.jpg";
 import skill2 from "../../public/img/iaap-was-certificate.jpg";

@@ -237,7 +237,7 @@
   }
 
   @media (min-width: 48rem) {
-    &__nav {
+    &[class*="index"] &__nav {
       justify-content: flex-end;
     }
 

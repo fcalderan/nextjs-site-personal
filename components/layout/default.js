@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-
 export default function Defaultlayout(props) {
   const [theme, setTheme] = useState();
 
