@@ -108,11 +108,11 @@ export default function Index(props) {
                     (Fractal/Storybook) but I also create landing pages, static
                     or nextJS sites with a mobile-first approach. I do love CSS
                     and I like creating inspiring demos on Codepen. Sometimes I
-                    get involved by participating in coding contests such as the{" "}
+                    enjoy participating in coding challenges, like the{" "}
                     <a href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/">
                       “Code in the Dark” event
                     </a>{" "}
-                    I won in 2019.
+                    which I won in 2019.
                   </p>
                   <p>
                     One year ago I started to explore ReactJS/NextJS and make
