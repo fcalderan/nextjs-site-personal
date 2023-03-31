@@ -115,9 +115,9 @@ export default function Index(props) {
                     which I won in 2019.
                   </p>
                   <p>
-                    One year ago I started to explore ReactJS/NextJS and make
-                    integrations with Next-Auth, GraphQL, MongoDB, Contentful or
-                    AWS.
+                    One year ago I started to explore ReactJS/NextJS and
+                    building integrations with Next-Auth, GraphQL, MongoDB,
+                    Contentful or AWS.
                   </p>
                 </div>
 
