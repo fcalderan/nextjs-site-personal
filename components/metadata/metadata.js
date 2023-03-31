@@ -10,7 +10,7 @@ export default function Metadata(props) {
       <meta name="twitter:url" content={metadata.url} />
       <meta name="twitter:title" content={metadata.title} />
       <meta name="twitter:description" content={metadata.description} />
-      <meta name="twitter:image" content={metadata.image} />
+      <meta name="twitter:image" content={metadata.imagetwitter} />
 
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />

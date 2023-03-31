@@ -11,6 +11,7 @@ const metadata = {
   description:
     "Hello. I am Fabrizio Calderan, a professional frontend developer based in Treviso, Italy. Proficient in HTML, CSS, SVG, Responsive Design, Accessibility (a11y), JavaScript, React and NextJS",
   image: "https://fabrizio.dev/share.jpg",
+  imagetwitter: "https://fabrizio.dev/share-twitter.jpg",
 };
 
 export default function Index(props) {

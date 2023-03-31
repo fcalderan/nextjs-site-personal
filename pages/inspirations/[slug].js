@@ -13,6 +13,7 @@ export default function InspirationSlug(props) {
     title: `${data.title} : inspirations : fabrizio.dev`,
     description: data.description,
     image: data.imagePost.fields.file.url,
+    imagetwitter: data.imagePost.fields.file.url,
   };
 
   return (
