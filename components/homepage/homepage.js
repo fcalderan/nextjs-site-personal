@@ -106,10 +106,9 @@ export default function Index(props) {
                   <p>
                     I usually build styleguides in HTML, JavaScript and CSS/SASS
                     (Fractal/Storybook) but I also create landing pages, static
-                    or nextJS sites with a &ldquo;mobile-first&rdquo; approach.
-                    I do love CSS and I like creating inspiring demos on
-                    Codepen. Sometimes I get involved by participating in coding
-                    contests such as the{" "}
+                    or nextJS sites with a mobile-first approach. I do love CSS
+                    and I like creating inspiring demos on Codepen. Sometimes I
+                    get involved by participating in coding contests such as the{" "}
                     <a href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/">
                       “Code in the Dark” event
                     </a>{" "}
