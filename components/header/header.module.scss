@@ -212,8 +212,12 @@
       animation: 0s showmenu calc(var(--menu-open) - 0.15s) forwards;
 
       li {
-        animation: 0.5s showlinks calc(var(--menu-open) + var(--_i, 0) * 0.25s)
+        animation: 0.33s showlinks calc(var(--menu-open) + var(--_i, 0) * 0.2s)
           forwards;
+
+        @media (prefers-reduced-motion: reduce) {
+          animation: 0s showlinks calc(var(--menu-open) + 0.15s) forwards;
+        }
       }
     }
 
