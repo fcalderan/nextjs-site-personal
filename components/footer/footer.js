@@ -45,7 +45,7 @@ export default function Footer(props) {
               />
             </svg>
             &copy; Fabrizio Calderan, <span>2023&mdash;Today</span>. Made with
-            love in nextJS.
+            love in nextJS and Contentful.
           </p>
 
           <p>
