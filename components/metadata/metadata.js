@@ -21,6 +21,8 @@ export default function Metadata(props) {
 
       <meta name="image_thumb_src" content={metadata.image} />
       <meta name="thumb" content={metadata.image} />
+
+      <link href="https://front-end.social/@fcalderan" rel="me" />
     </>
   );
 }
