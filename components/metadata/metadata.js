@@ -3,24 +3,52 @@ export default function Metadata(props) {
 
   return (
     <>
-      <meta name="title" content={metadata.title} />
-      <meta name="description" content={metadata.description} />
+      <meta key="title" name="title" content={metadata.title} />
+      <meta
+        key="description"
+        name="description"
+        content={metadata.description}
+      />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={metadata.url} />
-      <meta name="twitter:title" content={metadata.title} />
-      <meta name="twitter:description" content={metadata.description} />
-      <meta name="twitter:image" content={metadata.imagetwitter} />
+      <meta
+        key="twitter:card"
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta key="twitter:url" name="twitter:url" content={metadata.url} />
+      <meta key="twitter:title" name="twitter:title" content={metadata.title} />
+      <meta
+        key="twitter:description"
+        name="twitter:description"
+        content={metadata.description}
+      />
+      <meta
+        key="twitter:image"
+        name="twitter:image"
+        content={metadata.imagetwitter}
+      />
 
-      <meta property="og:title" content={metadata.title} />
-      <meta property="og:description" content={metadata.description} />
-      <meta property="og:image" content={metadata.image} />
-      <meta property="og:url" content={metadata.url} />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={metadata.name} />
+      <meta key="og:title" property="og:title" content={metadata.title} />
+      <meta
+        key="og:description"
+        property="og:description"
+        content={metadata.description}
+      />
+      <meta key="og:image" property="og:image" content={metadata.image} />
+      <meta key="og:url" property="og:url" content={metadata.url} />
+      <meta key="og:type" property="og:type" content="website" />
+      <meta
+        key="og:site_name"
+        property="og:site_name"
+        content={metadata.name}
+      />
 
-      <meta name="image_thumb_src" content={metadata.image} />
-      <meta name="thumb" content={metadata.image} />
+      <meta
+        key="image_thumb_src"
+        name="image_thumb_src"
+        content={metadata.image}
+      />
+      <meta key="thumb" name="thumb" content={metadata.image} />
 
       <link href="https://front-end.social/@fcalderan" rel="me" />
     </>
