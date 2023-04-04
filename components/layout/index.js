@@ -37,30 +37,29 @@ export default function Indexlayout(props) {
     const currentTheme = getThemePreference();
     setTheme(currentTheme);
 
-    /* close mobile menu on resize */
-    const menuHandler = () => {
-      closeMobileMenu();
-    };
-
-    /* detect ESC key */
-    const keyUpHandler = (ev) => {
-      if (ev.key === "Escape" && mobileMenuOpened) {
-        menuHandler();
-      }
-    };
-
     window
       .matchMedia("(min-width: 48rem)")
-      .addEventListener("change", menuHandler);
-    document.body.addEventListener("keyup", keyUpHandler);
-
+      .addEventListener("change", closeMobileMenu);
     return () => {
       window
         .matchMedia("(min-width: 48rem)")
-        .removeEventListener("change", menuHandler);
-      document.body.removeEventListener("keyup", keyUpHandler);
+        .removeEventListener("change", closeMobileMenu);
     };
   }, []);
+
+  useEffect(() => {
+    /* detect ESC key */
+    const keyUpHandler = (ev) => {
+      console.log(ev.key, mobileMenuOpened);
+      if (ev.key === "Escape" && mobileMenuOpened) {
+        closeMobileMenu();
+      }
+    };
+    document.body.addEventListener("keyup", keyUpHandler);
+    return () => {
+      document.body.removeEventListener("keyup", keyUpHandler);
+    };
+  }, [mobileMenuOpened]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
