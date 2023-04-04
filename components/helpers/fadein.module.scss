@@ -10,10 +10,5 @@
       transform: translateY(0);
       opacity: 1;
     }
-    .fade-in-section:has(:target) [class*="section_cnt"] {
-      transition: none;
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 }

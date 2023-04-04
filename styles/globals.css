@@ -437,3 +437,13 @@ main:focus {
 .err404 .go:hover {
   opacity: 1;
 }
+
+@supports selector(:has(*)) {
+  @media (min-width: 48rem) {
+    body:has(:target) [class*="fade-in-section"] .section_cnt {
+      transition: none !important;
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+  }
+}
