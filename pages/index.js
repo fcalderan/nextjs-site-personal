@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Indexlayout from "../components/layout/index";
 import Homepage from "../components/homepage/homepage";
 import Metadata from "../components/metadata/metadata";
@@ -17,11 +16,7 @@ const metadata = {
 export default function Index(props) {
   return (
     <Indexlayout>
-      <Head>
-        <title>{metadata.title}</title>
-        <Metadata metadata={metadata} />
-      </Head>
-
+      <Metadata metadata={metadata} />
       <Homepage inspirations={props.inspirations} />
     </Indexlayout>
   );

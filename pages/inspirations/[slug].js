@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Metadata from "../../components/metadata/metadata";
 import Defaultlayout from "../../components/layout/default";
 import Inspiration from "../../components/inspiration/inspiration";
@@ -18,11 +17,7 @@ export default function InspirationSlug(props) {
 
   return (
     <Defaultlayout>
-      <Head>
-        <title>{metadata.title}</title>
-        <Metadata metadata={metadata} />
-      </Head>
-
+      <Metadata metadata={metadata} />
       <Inspiration data={data} />
     </Defaultlayout>
   );

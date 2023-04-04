@@ -1,8 +1,11 @@
+import Head from "next/head";
+
 export default function Metadata(props) {
   const metadata = props.metadata;
 
   return (
-    <>
+    <Head>
+      <title>{metadata.title}</title>
       <meta key="title" name="title" content={metadata.title} />
       <meta
         key="description"
@@ -47,6 +50,6 @@ export default function Metadata(props) {
       <meta key="thumb" name="thumb" content={metadata.image} />
 
       <link href="https://front-end.social/@fcalderan" rel="me" />
-    </>
+    </Head>
   );
 }
