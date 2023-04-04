@@ -117,7 +117,14 @@ export default function Header(props) {
           </>
         )}
 
-        {props.type === "default" && <Link href="/">Homepage</Link>}
+        {props.type === "default" && (
+          <Link href="/" className={style.backtohome}>
+            <svg viewBox="0 0 22 16" aria-hidden="true" focusable="false">
+              <path d="M 8 1 L 1 8 L 8 15 M 1 8 L 20 8" />
+            </svg>{" "}
+            Homepage
+          </Link>
+        )}
 
         <button
           inert={props.mobileMenuOpened === true ? "" : null}

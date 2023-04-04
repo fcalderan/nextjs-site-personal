@@ -334,4 +334,16 @@
       }
     }
   }
+
+  .backtohome {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    svg {
+      stroke: currentColor;
+      stroke-width: 1px;
+      fill: none;
+      width: 30px;
+    }
+  }
 }
