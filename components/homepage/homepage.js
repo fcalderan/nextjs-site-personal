@@ -152,7 +152,7 @@ export default function Index(props) {
                       Accessibility Specialist) course
                     </a>{" "}
                     (by Deque University) and I improved myself in the creation
-                    of a better web experience.
+                    of a better web experience for everyone.
                   </p>
                   <p>
                     I often prepare reports about the WCAG compliance of some
