@@ -50,7 +50,6 @@ export default function Indexlayout(props) {
   useEffect(() => {
     /* detect ESC key */
     const keyUpHandler = (ev) => {
-      console.log(ev.key, mobileMenuOpened);
       if (ev.key === "Escape" && mobileMenuOpened) {
         closeMobileMenu();
       }
