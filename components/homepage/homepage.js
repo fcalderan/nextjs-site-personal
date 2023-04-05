@@ -60,9 +60,9 @@ export default function Index(props) {
               A Master's Degree in Computer Science at Ca' Foscari university in
               Venice, more than 20 years of experience in beautifully
               handcrafting thousands lines of code and a growing knowledge built
-              day by day. In the last 17 years I've been working at
-              <a href="https://www.akqa.com/studios/venice/">AKQA</a> (formerly:
-              “H-art”) in Venice.
+              day by day. In the last 17 years I've been working at{" "}
+              <a href="https://www.akqa.com/studios/venice/">AKQA</a> in Venice
+              (formerly: “H-art”).
             </p>
 
             <p data-codeviewport>
