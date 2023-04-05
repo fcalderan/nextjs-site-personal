@@ -47,7 +47,7 @@ export default function Index(props) {
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use xlinkHref="#svg-about"></use>
               </svg>
-              <br />I am a{" "}
+              <br />I am an inclusive{" "}
               <strong>
                 frontend developer
                 <span aria-hidden="true" data-code-html="h2">
