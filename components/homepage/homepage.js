@@ -128,10 +128,10 @@ export default function Index(props) {
                 >
                   <Image
                     src={skill1}
-                    alt="Me and other partecipants in the elimination round of the Code in the Dark in 2019."
+                    alt="Me and other partecipants in the elimination round of the Code in the Dark in Venice, 2019."
                   />
                   <figcaption>
-                    Code in the Dark, Venice edition. 2019.
+                    Me at code in the Dark, Venice edition. 2019.
                   </figcaption>
                 </figure>
               </section>
