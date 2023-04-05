@@ -60,7 +60,6 @@ export default function Header(props) {
           <>
             <button
               aria-expanded={props.mobileMenuOpened.toString()}
-              aria-live="polite"
               ref={toggleMenuButton}
               onClick={toggleMenuHandler}
               className={`${style["header__toggle"]} ${style["header__toggle--menu"]}`}
@@ -130,7 +129,6 @@ export default function Header(props) {
           inert={props.mobileMenuOpened === true ? "" : null}
           id="theme-toggle"
           aria-label={themeSettings[props.currentTheme]}
-          aria-live="polite"
           ref={toggleThemeButton}
           onClick={toggleThemeHandler}
           className={`${style["header__toggle"]} ${style["header__toggle--theme"]}`}
