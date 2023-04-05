@@ -61,8 +61,7 @@ export default function Index(props) {
               Venice, more than 20 years of experience in beautifully
               handcrafting thousands lines of code and a growing knowledge built
               day by day. In the last 17 years I've been working at{" "}
-              <a href="https://www.akqa.com/studios/venice/">AKQA</a> in Venice
-              (formerly: “H-art”).
+              <a href="https://www.akqa.com/studios/venice/">AKQA</a> in Venice.
             </p>
 
             <p data-codeviewport>
@@ -90,11 +89,12 @@ export default function Index(props) {
               <span lang="it">Telecom Italia</span>, Gore, Nike and many more).
             </p>
             <p data-codeviewport>
-              My daily tools includes Atom, VSCode, Git, Figma
+              My toolset includes Atom, VSCode, Git (GitHub), Voiceover, Figma
               <span aria-hidden="true" data-code-css="p:last-of-type">
                 ,
               </span>{" "}
-              Sketch and the OSx Terminal (plus Udemy and ChatGPT for learning).
+              and Sketch (also, Udemy, Frontend Masters and ChatGPT for
+              learning).
             </p>
 
             <div className={style.cards}>
