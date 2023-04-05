@@ -91,7 +91,10 @@ export default function Index(props) {
             <p data-codeviewport>
               My toolset includes Atom, VSCode, Git (GitHub), Voiceover, Figma,
               Photoshop
-              <span aria-hidden="true" data-code-css="p:last-of-type">
+              <span
+                aria-hidden="true"
+                data-code-css="p&#x2009;:&#x2009;last-of-type"
+              >
                 ,
               </span>{" "}
               and Sketch (also: Udemy, Frontend Masters and ChatGPT for
