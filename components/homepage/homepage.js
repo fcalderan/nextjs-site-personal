@@ -115,9 +115,9 @@ export default function Index(props) {
                     which I won in 2019.
                   </p>
                   <p>
-                    One year ago I started to explore ReactJS/NextJS and
-                    building integrations with Next-Auth, GraphQL, MongoDB,
-                    Contentful or AWS.
+                    In 2022 I started to explore ReactJS/NextJS and building
+                    integrations with Next-Auth, GraphQL, MongoDB, Contentful or
+                    AWS.
                   </p>
                 </div>
 
@@ -141,7 +141,7 @@ export default function Index(props) {
                   <h3 id="skills-a11y">Accessibility</h3>
 
                   <p>
-                    I like to write and test my code for accessibility
+                    I like writing and testing my code for accessibility
                     <span aria-hidden="true" data-code-html="section">
                       ,
                     </span>{" "}
