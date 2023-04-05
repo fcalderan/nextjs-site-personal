@@ -56,8 +56,8 @@ html {
   --c_primary: hsla(206, 50%, 31%, 1);
   --c_primary-tr: hsla(206, 50%, 31%, 0);
   /* --c_complementary: hsla(150, 35%, 44%, 1); */
-  --c_complementary: hsla(87, 34%, 44%, 1);
-  --c_complementary-tr: hsla(87, 35%, 44%, 0);
+  --c_complementary: hsl(80, 57%, 38%);
+  --c_complementary-tr: hsla(80, 57%, 38%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
   --c_base_background_tr: hsla(0, 0%, 100%, 0.6);
   --c_gray: hsl(210, 9%, 38%);
