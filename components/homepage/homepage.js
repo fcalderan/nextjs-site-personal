@@ -47,7 +47,7 @@ export default function Index(props) {
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use xlinkHref="#svg-about"></use>
               </svg>
-              <br />I am an inclusive{" "}
+              <br />I am a{" "}
               <strong>
                 frontend developer
                 <span aria-hidden="true" data-code-html="h2">
@@ -57,10 +57,12 @@ export default function Index(props) {
             </h2>
 
             <p>
-              More than 20 years of experience in beautifully handcrafting
-              thousands lines of code and a growing knowledge built day by day.
-              In the last 17 years I've been working for H-art and AKQA in
-              Venice headquarter, Italy.
+              A Master's Degree in Computer Science at Ca' Foscari university in
+              Venice, more than 20 years of experience in beautifully
+              handcrafting thousands lines of code and a growing knowledge built
+              day by day. In the last 17 years I've been working at
+              <a href="https://www.akqa.com/studios/venice/">AKQA</a> (formerly:
+              “H-art”) in Venice.
             </p>
 
             <p data-codeviewport>
