@@ -21,17 +21,25 @@
     --delay: 0s;
   }
 
-  &:hover,
-  .section:has(
-      span:not([aria-hidden]):hover,
-      :focus-within,
-      [class*="social-icons"]:hover
-    )
-    & {
+  &:hover {
     --scale: 1;
     --rotation: 1deg;
     --grayscale: 0.2;
     --mask-size: 93%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .section:has(
+        span:not([aria-hidden]):hover,
+        :focus-within,
+        [class*="social-icons"]:hover
+      )
+      & {
+      --scale: 1;
+      --rotation: 1deg;
+      --grayscale: 0.2;
+      --mask-size: 93%;
+    }
   }
 
   *,
