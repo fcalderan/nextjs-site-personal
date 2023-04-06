@@ -269,11 +269,11 @@ main:focus {
   :root[data-theme="dark"] main {
     background-image: url(/img/bg-divider-dark-1.svg);
   }
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     main {
       background-image: url(/img/bg-divider-dark-1.svg);
     }
-  }
+  } */
 }
 
 /* htmltag output */
