@@ -3,6 +3,8 @@ import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
+const mq = "(prefers-color-scheme: dark)";
+
 export default function Indexlayout(props) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [theme, setTheme] = useState();
@@ -24,8 +26,6 @@ export default function Indexlayout(props) {
   });
 
   const getThemePreference = () => {
-    const mq = "(prefers-color-scheme: dark)";
-
     if (localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     } else {
@@ -40,6 +40,12 @@ export default function Indexlayout(props) {
     window
       .matchMedia("(min-width: 48rem)")
       .addEventListener("change", closeMobileMenu);
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (ev) => {
+        setTheme(ev.matches ? "dark" : "light");
+      });
+
     return () => {
       window
         .matchMedia("(min-width: 48rem)")
@@ -50,7 +56,7 @@ export default function Indexlayout(props) {
   useEffect(() => {
     /* detect ESC key */
     const keyUpHandler = (ev) => {
-      if (ev.key === "Escape" && mobileMenuOpened) {
+      if (ev.key === "Escape") {
         closeMobileMenu();
       }
     };

@@ -49,7 +49,7 @@ export default function Footer(props) {
           </p>
 
           <p>
-            This site wants to be inclusive and WCAG 2.1/AA compliant: if you
+            This site wants to be inclusive and WCAG 2.1/AA conformant: if you
             encounter any accessibility issues or have feedback on how I can
             improve it, please let me know at{" "}
             <strong>
@@ -57,6 +57,16 @@ export default function Footer(props) {
             </strong>
             .
           </p>
+
+          {/* <nav aria-label="Footer">
+            <ul>
+              <li>
+                <a href="https://github.com/fcalderan/nextjs-site-personal">
+                  Source code (GitHub)
+                </a>
+              </li>
+            </ul>
+          </nav> */}
         </div>
 
         <Social />

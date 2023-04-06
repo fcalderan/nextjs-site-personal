@@ -163,7 +163,7 @@ export default function Index(props) {
                     of a better web experience for everyone.
                   </p>
                   <p>
-                    I often prepare reports about the WCAG compliance of some
+                    I often prepare reports about the WCAG/AA conformity of some
                     websites, aiming to propose a list of strategies and
                     adjustments to remove or limit the main accessibility
                     issues.

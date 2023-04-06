@@ -251,7 +251,7 @@
 
       &:focus {
         outline-color: currentColor;
-        outline-style: solid;
+        outline-style: dashed;
       }
     }
   }
@@ -301,16 +301,16 @@
       background-image: url(/img/bg-header-dark.svg),
         linear-gradient(to bottom, var(--c_base_background), var(--c_tertiary));
     }
-    @media (prefers-color-scheme: dark) {
-      &[aria-labelledby="about"] {
-        background-image: url(/img/bg-header-dark.svg),
-          linear-gradient(
-            to bottom,
-            var(--c_base_background),
-            var(--c_tertiary)
-          );
-      }
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   &[aria-labelledby="about"] {
+    //     background-image: url(/img/bg-header-dark.svg),
+    //       linear-gradient(
+    //         to bottom,
+    //         var(--c_base_background),
+    //         var(--c_tertiary)
+    //       );
+    //   }
+    // }
 
     &[aria-labelledby="skills"] {
       background-image: linear-gradient(

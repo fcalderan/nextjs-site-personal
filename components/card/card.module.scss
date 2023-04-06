@@ -28,7 +28,7 @@
 
   &:hover,
   &:focus-within {
-    border: 4px var(--c_secondary) solid;
+    border: 4px var(--c_secondary) dashed;
   }
 
   header {

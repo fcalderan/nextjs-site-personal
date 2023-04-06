@@ -1,6 +1,7 @@
 .footer {
   background: var(--c_tertiary);
   padding: var(--section-block-padding) var(--section-inline-padding);
+  color: var(--c_primary);
 
   @media (max-width: 48rem) {
     border: 1rem var(--c_tertiary) solid;
@@ -30,7 +31,6 @@
     line-height: 2;
     word-spacing: 0;
     text-align: center;
-    color: var(--c_primary);
     text-wrap: balance;
   }
 
@@ -43,7 +43,7 @@
     opacity: 1;
     animation: none;
     margin: 0;
-    color: var(--c_primary);
+    color: inherit;
   }
 
   .signature {
@@ -54,8 +54,18 @@
     transform: rotate(3deg);
   }
 
+  nav {
+    margin: 2.5rem 0;
+    font-size: 1rem;
+    a,
+    a:link,
+    a:visited {
+      color: currentColor;
+    }
+  }
+
   @media (min-width: 64rem) {
-    padding-top: 3rem !important;
+    padding-block: 2.5rem;
 
     p {
       text-align: left;
@@ -72,6 +82,10 @@
     [class*="social-icons"] {
       align-self: flex-end;
       transform: translate(calc(var(--social-icon-offset) * -1), 0);
+    }
+
+    nav {
+      text-align: left;
     }
   }
 }
