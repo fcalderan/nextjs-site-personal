@@ -9,18 +9,20 @@ export default function Card(props) {
   const postUrl = `/inspirations/${field.slug}`;
   const title = field.title;
   const description = field.description;
+  const id = `inspiration-${props.inspiration.sys.id}`;
 
   return (
     <div className={style.card}>
-      <article>
+      <article aria-describedby={id}>
         <img
+          aria-hidden="true"
           src={`https:${image.file.url}`}
           alt={image.description}
           loading="lazy"
         />
 
         <header>
-          <h3>
+          <h3 id={id}>
             <Link href={postUrl}>{title}</Link>
           </h3>
         </header>
