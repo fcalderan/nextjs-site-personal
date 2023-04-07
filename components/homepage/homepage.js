@@ -194,7 +194,7 @@ export default function Index(props) {
               Inspirations
             </h2>
 
-            <p>
+            <p className={style.intro}>
               Some of my latest projects, ideas or just experiments led by
               serendipity.
             </p>

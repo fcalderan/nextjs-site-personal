@@ -234,13 +234,21 @@
 
   p {
     font: 1.25rem/1.75 "Merriweather-Light";
-    text-align: center;
+    text-align: left;
     color: var(--c_primary);
     max-inline-size: 72ch;
     margin: 0 auto;
 
+    &.intro {
+      text-align: center;
+    }
+
+    @media (min-width: 64rem) {
+      text-align: center;
+    }
+
     & + p {
-      margin-block-start: 2.25em;
+      margin-block-start: 2.5rem;
     }
 
     a {
@@ -348,10 +356,11 @@
     padding-block-end: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2.5rem;
 
     @media (min-width: 64rem) {
       flex-direction: row;
+      gap: 5rem;
       align-items: flex-end;
       &:nth-child(even) {
         flex-direction: row-reverse;
@@ -391,10 +400,10 @@
 
       @media (max-width: 63.99rem) {
         justify-content: center;
-        > * {
-          margin-inline: auto;
-          text-align: center;
-        }
+        // > * {
+        //   margin-inline: auto;
+        //   text-align: center;
+        // }
       }
     }
 
@@ -459,6 +468,7 @@
 //   animation-duration: 1s;
 // }
 /* inspiration */
+
 .inspirations {
   display: grid;
   --cols: 1;
