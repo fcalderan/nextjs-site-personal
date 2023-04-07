@@ -456,8 +456,10 @@
         --rotation: -1.25deg;
       }
 
-      &:hover .card__image {
-        transform: scale(1.04) rotate(var(--rotation));
+      @media (prefers-reduced-motion: no-preference) {
+        &:hover .card__image {
+          transform: scale(1.04) rotate(var(--rotation));
+        }
       }
     }
   }
