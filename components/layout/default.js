@@ -24,6 +24,12 @@ export default function Defaultlayout(props) {
   useEffect(() => {
     const currentTheme = getThemePreference();
     setTheme(currentTheme);
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (ev) => {
+        setTheme(ev.matches ? "dark" : "light");
+      });
   }, []);
 
   useEffect(() => {

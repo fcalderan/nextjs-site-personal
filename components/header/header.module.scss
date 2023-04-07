@@ -93,10 +93,18 @@
         .header__toggle--menu-closed {
           transition: opacity 0.25s 0s;
           opacity: 0;
+          @media (prefers-reduced-motion: reduce) {
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
+          }
         }
         .header__toggle--menu-open {
           transition: opacity 0.25s 0.5s;
           opacity: 1;
+          @media (prefers-reduced-motion: reduce) {
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
+          }
         }
       }
 
@@ -127,6 +135,10 @@
     --menu-open: 0.5s;
     --items-show: 1.25s;
 
+    @media (prefers-reduced-motion: reduce) {
+      --menu-open: 0s;
+    }
+
     &__toggle--menu::before {
       content: "";
       position: fixed;
@@ -144,10 +156,13 @@
 
     &__toggle[aria-expanded="true"] {
       animation: 1s disablepointer 0s;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
 
       &::before {
         transition: inline-size var(--menu-open) 0s,
-          background-color 0.5s var(--menu-open);
+          background-color var(--menu-open) var(--menu-open);
         --_size: 150vmax;
         --_x: -25vmax;
         --_y: -25vmax;
@@ -211,12 +226,17 @@
       display: block;
       animation: 0s showmenu calc(var(--menu-open) - 0.15s) forwards;
 
+      @media (prefers-reduced-motion: reduce) {
+        animation-delay: 0s;
+      }
+
       li {
         animation: 0.33s showlinks calc(var(--menu-open) + var(--_i, 0) * 0.2s)
           forwards;
 
         @media (prefers-reduced-motion: reduce) {
-          animation: 0s showlinks calc(var(--menu-open) + 0.15s) forwards;
+          animation-duration: 0s;
+          animation-delay: 0s;
         }
       }
     }
