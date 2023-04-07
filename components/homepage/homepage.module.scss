@@ -228,8 +228,14 @@
     letter-spacing: -0.075rem;
     margin-block-end: 2rem;
     text-align: left;
+    margin-inline: auto;
     inline-size: fit-content;
-    text-indent: -0.15em;
+
+    @media (min-width: 64rem) {
+      text-align: left;
+      margin-inline: 0;
+      text-indent: -0.15em;
+    }
   }
 
   p {
