@@ -78,7 +78,7 @@ html {
   --c_complementary: hsla(87, 35%, 50%, 1);
   --c_base_background: hsla(0, 0%, 0%, 1);
   --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
-  --box-shadow: hsla(0, 2%, 5%, 0.5);
+  --box-shadow: hsla(210, 12%, 6%, 0.5);
   --c_gray: hsl(210, 9%, 62%);
   --invert: 1;
 }
