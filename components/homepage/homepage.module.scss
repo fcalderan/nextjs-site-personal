@@ -138,6 +138,12 @@
     background-color: var(--c_tertiary);
   }
 
+  &[aria-labelledby="content"] {
+    @media (min-width: 48rem) {
+      padding-block-start: 5rem;
+    }
+  }
+
   :where(h1, h2, h3) {
     margin: 0;
     padding: 0 0.15em;
