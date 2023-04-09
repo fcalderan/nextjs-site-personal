@@ -118,7 +118,7 @@ export default function Index(props) {
                     <a href="https://www.interlogica.it/en/insight-en/winner-codeinthedark-venice/">
                       “Code in the Dark” event
                     </a>{" "}
-                    which I won in 2019.
+                    won in 2019.
                   </p>
                   <p>
                     In 2022 I started to explore ReactJS/NextJS and building
