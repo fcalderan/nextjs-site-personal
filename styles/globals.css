@@ -1,10 +1,4 @@
-/* Google Fonts */
-/*
-@include "https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@500;800&family=Darker+Grotesque:wght@500&display=swap";
-*/
-
 /* Local Fonts (WOFF2) */
-
 @font-face {
   font-family: "Inter-Medium"; /* 109kb */
   font-weight: 500;
@@ -19,19 +13,6 @@
   font-display: swap;
   src: url(/fonts/Inter-ExtraBold.woff2) format("woff2");
 }
-/* @font-face {
-  font-family: "DarkerGrotesque-Medium"; 
-  font-weight: 500;
-  font-display: swap;
-  src: url(/fonts/DarkerGrotesque-Medium.woff2) format("woff2");
-} 
-*/
-/* @font-face {
-  font-family: "Caveat-Regular"; 
-  font-weight: 400;
-  font-display: swap;
-  src: url(/fonts/Caveat-Regular.woff2) format("woff2");
-} */
 
 @font-face {
   font-family: "Indieflower"; /* 25kb */
@@ -55,15 +36,15 @@ html {
   --c_secondary-tr: hsla(210, 29%, 45%, 0);
   --c_primary: hsla(206, 50%, 31%, 1);
   --c_primary-tr: hsla(206, 50%, 31%, 0);
-  /* --c_complementary: hsla(150, 35%, 44%, 1); */
   --c_complementary: hsl(80, 57%, 38%);
   --c_complementary-tr: hsla(80, 57%, 38%, 0);
   --c_base_background: hsla(0, 0%, 100%, 1);
   --c_base_background_tr: hsla(0, 0%, 100%, 0.6);
   --c_gray: hsl(210, 9%, 38%);
-  --box-shadow: hsla(210, 34%, 88%, 0.5);
+  --box-shadow: hsla(210, 9%, 88%, 0.5);
   --invert: 0;
   --skip-block-size: 3rem;
+  --opacity-code: 0.6;
 
   color-scheme: light;
 }
@@ -78,30 +59,10 @@ html {
   --c_complementary: hsla(87, 35%, 50%, 1);
   --c_base_background: hsla(0, 0%, 0%, 1);
   --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
-  --box-shadow: hsla(210, 12%, 6%, 0.5);
-  --c_gray: hsl(210, 9%, 62%);
+  --box-shadow: hsl(210, 12%, 29%, 0.5);
+  --c_gray: hsl(210, 4%, 66%);
   --invert: 1;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    --c_tertiary: hsla(206, 26%, 17%, 1);
-    --c_tertiary_tr: hsla(206, 26%, 17%, 0.75);
-
-    --c_secondary: hsla(206, 54%, 59%, 1);
-    --c_secondary-tr: hsla(206, 54%, 59%, 0);
-    --c_primary: hsla(206, 26%, 79%, 1);
-    --c_primary-tr: hsla(206, 26%, 79%, 0);
-    --c_complementary: hsla(87, 35%, 50%, 1);
-    --c_base_background: hsla(0, 0%, 0%, 1);
-    --c_base_background_tr: hsla(0, 0%, 0%, 0.6);
-    --box-shadow: hsla(0, 2%, 5%, 0.95);
-    --c_gray: hsl(210, 9%, 62%);
-    --invert: 1;
-  }
-} */
-
-html[data-theme="dark"] {
+  --opacity-code: 0.6;
   color-scheme: dark;
 }
 /* end theme/colors variables */
@@ -309,7 +270,7 @@ main:focus {
     z-index: 1;
     display: block;
     font: max(40%, 1.5rem) "Indieflower", serif;
-    opacity: 0.6;
+    opacity: var(--opacity-code);
     letter-spacing: 0;
     color: var(--c_gray);
     background-size: 50px auto;
