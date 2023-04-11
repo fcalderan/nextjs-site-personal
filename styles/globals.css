@@ -119,6 +119,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  hyphens: auto;
   overflow-x: hidden;
 }
 

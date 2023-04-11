@@ -30,6 +30,7 @@ export default function Index(props) {
           <figure className={style.portrait}>
             <div>
               <img
+                fetchpriority="high"
                 width="230"
                 height="230"
                 src="/img/me-front2.png"
