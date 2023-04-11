@@ -119,7 +119,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  hyphens: auto;
   overflow-x: hidden;
 }
 
@@ -128,7 +127,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   min-block-size: 100%;
-  font: 1.5rem/1.5 "DarkerGrotesque-Medium", sans-serif;
+  hyphens: auto;
   font: 1.5rem/1.5 "Merriweather-Light", serif;
 }
 
@@ -167,7 +166,17 @@ p,
 h1,
 h2,
 h3 {
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (min-width: 48rem) {
+  p,
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+  }
 }
 
 ol,

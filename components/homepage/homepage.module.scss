@@ -97,6 +97,7 @@
   img {
     display: block;
     max-inline-size: 100%;
+    block-size: calc(100% * 5 / 6);
     position: absolute;
     z-index: 20;
     top: 50%;

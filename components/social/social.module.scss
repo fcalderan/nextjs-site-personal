@@ -1,5 +1,6 @@
 .social-icons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   inline-size: fit-content;
   margin: 0 auto 3rem auto;
@@ -20,6 +21,7 @@
     svg {
       transition: transform 0.25s 0s;
       will-change: transform;
+      margin: 0 auto;
     }
     &:hover svg {
       transform: scale(1.2);
