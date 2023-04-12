@@ -1,40 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import useTheme from "../helpers/theme";
+
 export default function Defaultlayout(props) {
-  const [theme, setTheme] = useState();
-
-  const toggleThemeHandler = useCallback((selectedState, toggleThemeButton) => {
-    localStorage.setItem("theme", selectedState);
-    setTheme((_) => selectedState);
-    toggleThemeButton.current.focus();
-  });
-
-  const getThemePreference = () => {
-    const mq = "(prefers-color-scheme: dark)";
-
-    if (localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    } else {
-      return window.matchMedia(mq).matches ? "dark" : "light";
-    }
-  };
-
-  useEffect(() => {
-    const currentTheme = getThemePreference();
-    setTheme(currentTheme);
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (ev) => {
-        setTheme(ev.matches ? "dark" : "light");
-      });
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
+  const { theme, toggleThemeHandler } = useTheme();
 
   return (
     <>

@@ -2,18 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import useTheme from "../helpers/theme";
 
 const mq = "(prefers-color-scheme: dark)";
 
 export default function Indexlayout(props) {
+  const { theme, toggleThemeHandler } = useTheme();
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
-  const [theme, setTheme] = useState();
-
-  const toggleThemeHandler = useCallback((selectedState, toggleThemeButton) => {
-    localStorage.setItem("theme", selectedState);
-    setTheme((_) => selectedState);
-    toggleThemeButton.current.focus();
-  });
 
   const toggleMenuHandler = useCallback(() => {
     setMobileMenuOpened((prevState) => !prevState);
@@ -25,26 +20,10 @@ export default function Indexlayout(props) {
     }
   });
 
-  const getThemePreference = () => {
-    if (localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    } else {
-      return window.matchMedia(mq).matches ? "dark" : "light";
-    }
-  };
-
   useEffect(() => {
-    const currentTheme = getThemePreference();
-    setTheme(currentTheme);
-
     window
       .matchMedia("(min-width: 48rem)")
       .addEventListener("change", closeMobileMenu);
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (ev) => {
-        setTheme(ev.matches ? "dark" : "light");
-      });
 
     return () => {
       window
@@ -65,10 +44,6 @@ export default function Indexlayout(props) {
       document.body.removeEventListener("keyup", keyUpHandler);
     };
   }, [mobileMenuOpened]);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
 
   return (
     <>
