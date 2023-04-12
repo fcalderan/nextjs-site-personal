@@ -17,6 +17,23 @@
   margin-block: calc(var(--inline-size) / -12);
   user-select: none;
 
+  @media (min-width: 64rem) {
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform: translateY(-2rem);
+      animation: reveal-figure 1s linear 1.33s forwards;
+      @keyframes reveal-figure {
+        33% {
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &:hover {
     --delay: 0s;
   }
@@ -177,8 +194,24 @@
     margin-block-end: 3rem;
     max-inline-size: 100%;
     margin-inline: auto;
+
     @media (min-width: 64rem) {
       padding-inline: 0;
+
+      @media (prefers-reduced-motion: no-preference) {
+        opacity: 0;
+        transform: translateY(3rem);
+        animation: reveal-title 1s linear 0.33s forwards;
+        @keyframes reveal-title {
+          33% {
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
     }
 
     small {
@@ -484,7 +517,7 @@
   display: grid;
   --cols: 1;
   grid-template-columns: repeat(var(--cols), 1fr);
-  grid-gap: 2rem;
+  grid-gap: 4rem;
   margin: 5rem 0;
 
   @media (min-width: 48rem) {
