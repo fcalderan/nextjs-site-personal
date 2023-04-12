@@ -129,14 +129,13 @@ h2,
 h3 {
   overflow-wrap: anywhere;
   hyphens: auto;
-}
 
-@media (min-width: 48rem) {
-  p,
-  h1,
-  h2,
-  h3 {
+  @media (min-width: 48rem) {
     overflow-wrap: break-word;
+  }
+
+  @media (min-width: 64rem) {
+    hyphens: none;
   }
 }
 
