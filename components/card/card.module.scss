@@ -48,12 +48,14 @@
   &:hover {
     --scale: 1.02;
     @media (prefers-reduced-motion: no-preference) {
-      --scale: 1.05;
-      &:is(:nth-child(odd)) {
-        --rotation: -1deg;
-      }
-      &:is(:nth-child(even)) {
-        --rotation: 1deg;
+      @media (min-width: 48rem) {
+        --scale: 1.05;
+        &:is(:nth-child(odd)) {
+          --rotation: -1deg;
+        }
+        &:is(:nth-child(even)) {
+          --rotation: 1deg;
+        }
       }
     }
   }

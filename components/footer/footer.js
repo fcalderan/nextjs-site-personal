@@ -51,7 +51,7 @@ export default function Footer(props) {
           <p>
             This site aims to be inclusive and WCAG 2.1/AA conformant: if you
             encounter any accessibility issues (or if you want to just say
-            “Hi!”) feel free to contact me at{" "}
+            «Hi!») feel free to contact me at{" "}
             <strong>
               m{/* */}e@f{/* */}abr{/* */}izio.dev
             </strong>
