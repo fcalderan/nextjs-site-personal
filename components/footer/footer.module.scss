@@ -54,13 +54,35 @@
     transform: rotate(3deg);
   }
 
+  .links {
+    margin-block: 0 1.5rem;
+    @media (min-width: 64rem) {
+      display: flex;
+      inline-size: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
   nav {
-    margin: 2.5rem 0;
+    margin-inline: auto;
+    margin-block-end: 2rem;
     font-size: 1rem;
+    inline-size: fit-content;
+
+    @media (min-width: 64rem) {
+      margin: 0;
+    }
+
     a,
     a:link,
     a:visited {
       color: currentColor;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
     }
   }
 

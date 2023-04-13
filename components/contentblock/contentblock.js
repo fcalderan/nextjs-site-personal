@@ -1,8 +1,8 @@
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Prism from "prismjs";
 import "prismjs/plugins/autoloader/prism-autoloader";
-import "prismjs/themes/prism.css";
-//import 'prism-theme-vars/base.css'
+//import "prismjs/themes/prism.css";
+import "prism-theme-vars/base.css";
 import { useEffect, useRef } from "react";
 
 export default function Contentblock(props) {

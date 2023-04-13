@@ -1,3 +1,13 @@
+@keyframes reveal {
+  25% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .portrait {
   --scale: 0.88;
   --rotation: 0.2deg;
@@ -21,16 +31,7 @@
     @media (prefers-reduced-motion: no-preference) {
       opacity: 0;
       transform: translateY(-2rem);
-      animation: reveal-figure 1s linear 1.33s forwards;
-      @keyframes reveal-figure {
-        33% {
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
+      animation: reveal 1s linear 1.33s forwards;
     }
   }
 
@@ -201,16 +202,7 @@
       @media (prefers-reduced-motion: no-preference) {
         opacity: 0;
         transform: translateY(3rem);
-        animation: reveal-title 1s linear 0.33s forwards;
-        @keyframes reveal-title {
-          33% {
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
+        animation: reveal 1s linear 0.33s forwards;
       }
     }
 
@@ -507,10 +499,6 @@
   }
 }
 
-// ::view-transition-old(root),
-// ::view-transition-new(root) {
-//   animation-duration: 1s;
-// }
 /* inspiration */
 
 .inspirations {

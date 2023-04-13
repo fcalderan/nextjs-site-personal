@@ -44,21 +44,23 @@ export default function Footer(props) {
                 c1.41,0.07,2.85,0.45,4.14,1.01C128.16,6.14,128.06,7.36,128.2,8.36z"
               />
             </svg>
-            &copy; Fabrizio Calderan, <span>2023&mdash;Today</span>. Made with
-            love in nextJS and Contentful.
+            &copy; Fabrizio Calderan, <span>2023&mdash;Today</span>.<br />
+            Made with love in nextJS and Contentful, hosted on Vercel.
           </p>
 
           <p>
-            This site wants to be inclusive and WCAG 2.1/AA conformant: if you
-            encounter any accessibility issues or have feedback on how I can
-            improve it, please let me know at{" "}
+            This site aims to be inclusive and WCAG 2.1/AA conformant: if you
+            encounter any accessibility issues (or if you want to just say
+            “Hi!”) feel free to contact me at{" "}
             <strong>
               m{/* */}e@f{/* */}abr{/* */}izio.dev
             </strong>
             .
           </p>
+        </div>
 
-          {/* <nav aria-label="Footer">
+        <div className={style.links}>
+          <nav aria-label="Footer">
             <ul>
               <li>
                 <a href="https://github.com/fcalderan/nextjs-site-personal">
@@ -66,10 +68,9 @@ export default function Footer(props) {
                 </a>
               </li>
             </ul>
-          </nav> */}
+          </nav>
+          <Social />
         </div>
-
-        <Social />
       </div>
     </footer>
   );

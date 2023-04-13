@@ -181,7 +181,6 @@
 
       &:focus {
         outline-color: currentColor;
-        outline-style: solid;
       }
     }
   }
@@ -203,19 +202,19 @@
   code[class] {
     font-size: 0.75em !important;
 
-    [class*="token"] {
-      &[class*="selector"],
-      &[class*="attr-name"] {
-        color: #360;
-      }
-      &[class*="function"],
-      &[class*="class-name"] {
-        color: #60754f;
-      }
-      &[class*="tag"] {
-        color: #482250;
-      }
-    }
+    // [class*="token"] {
+    //   &[class*="selector"],
+    //   &[class*="attr-name"] {
+    //     color: #360;
+    //   }
+    //   &[class*="function"],
+    //   &[class*="class-name"] {
+    //     color: #60754f;
+    //   }
+    //   &[class*="tag"] {
+    //     color: #482250;
+    //   }
+    // }
   }
 
   pre {
@@ -231,7 +230,7 @@
   }
 
   [class="codeblock"]:focus-within {
-    outline: 3px solid var(--c_primary);
+    outline: 3px dashed var(--c_primary);
   }
 
   :global(.tweetembed) {
@@ -241,5 +240,25 @@
     [class*="twitter-tweet"] {
       margin: 0 auto;
     }
+  }
+
+  /* Prism variables */
+
+  html & {
+    --prism-foreground: #393a34;
+    --prism-background: #fbfbfb;
+    --prism-comment: #b8c4b8;
+    --prism-string: #c67b5d;
+    --prism-literal: #3a9c9b;
+    --prism-keyword: #248459;
+    --prism-function: #607943;
+    --prism-deleted: #a14f55;
+    --prism-class: #2b91af;
+    --prism-builtin: #a52727;
+    --prism-property: #6b3620;
+    --prism-namespace: #c96880;
+    --prism-punctuation: #8e8f8b;
+    --prism-decorator: #bd8f8f;
+    --prism-json-property: #698c96;
   }
 }
