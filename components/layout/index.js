@@ -10,27 +10,15 @@ export default function Indexlayout(props) {
   const { theme, toggleThemeHandler } = useTheme();
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
 
-  const toggleMenuHandler = useCallback(() => {
+  const toggleMenuHandler = () => {
     setMobileMenuOpened((prevState) => !prevState);
-  });
+  };
 
-  const closeMobileMenu = useCallback(() => {
+  const closeMobileMenu = () => {
     if (mobileMenuOpened) {
       setMobileMenuOpened(false);
     }
-  });
-
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 48rem)")
-      .addEventListener("change", closeMobileMenu);
-
-    return () => {
-      window
-        .matchMedia("(min-width: 48rem)")
-        .removeEventListener("change", closeMobileMenu);
-    };
-  }, []);
+  };
 
   useEffect(() => {
     /* detect ESC key */
@@ -40,8 +28,17 @@ export default function Indexlayout(props) {
       }
     };
     document.body.addEventListener("keyup", keyUpHandler);
+
+    /* Detect resize from mobile to non-mobile and close the menu */
+    window
+      .matchMedia("(min-width: 48rem)")
+      .addEventListener("change", closeMobileMenu);
+
     return () => {
       document.body.removeEventListener("keyup", keyUpHandler);
+      window
+        .matchMedia("(min-width: 48rem)")
+        .removeEventListener("change", closeMobileMenu);
     };
   }, [mobileMenuOpened]);
 
