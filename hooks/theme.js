@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useTheme() {
+export default function useThemeHook() {
   const [theme, setTheme] = useState();
   const mq = "(prefers-color-scheme: dark)";
 

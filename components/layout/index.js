@@ -2,12 +2,12 @@ import { useState, useEffect, useCallback } from "react";
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import useTheme from "../helpers/theme";
+import useThemeHook from "../../hooks/theme";
 
 const mq = "(prefers-color-scheme: dark)";
 
 export default function Indexlayout(props) {
-  const { theme, toggleThemeHandler } = useTheme();
+  const { theme, toggleThemeHandler } = useThemeHook();
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
 
   const toggleMenuHandler = () => {

@@ -1,10 +1,10 @@
 import SymbolsSVG from "../svgsymbols/svgsymbols";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import useTheme from "../helpers/theme";
+import useThemeHook from "../../hooks/theme";
 
 export default function Defaultlayout(props) {
-  const { theme, toggleThemeHandler } = useTheme();
+  const { theme, toggleThemeHandler } = useThemeHook();
 
   return (
     <>
