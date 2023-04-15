@@ -11,8 +11,8 @@ export default function InspirationSlug(props) {
     name: "fabrizio.dev",
     title: `${data.title} : inspirations : fabrizio.dev`,
     description: data.description,
-    image: data.imagePost.fields.file.url,
-    imagetwitter: data.imagePost.fields.file.url,
+    image: `https:${data.imagePost.fields.file.url}`,
+    imagetwitter: `https:${data.imagePost.fields.file.url}`,
   };
 
   return (
