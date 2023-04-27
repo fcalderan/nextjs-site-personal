@@ -65,7 +65,7 @@
     margin: 0;
     padding: 0 0.15em;
     font-family: "Inter-ExtraBold", Arial;
-    line-height: 1;
+    line-height: 1.2;
     text-align: center;
     word-spacing: 0.1em;
     inline-size: fit-content;
@@ -191,12 +191,10 @@
     }
   }
 
-  @media (min-width: 48rem) {
-    &[aria-labelledby="content"] {
-      padding-block-end: 2.5rem;
-      position: relative;
-      z-index: 2;
-    }
+  &[aria-labelledby="content"] {
+    padding-block-end: 2.5rem;
+    position: relative;
+    z-index: 2;
   }
 
   code[class] {
