@@ -34,7 +34,7 @@ export default function Contentblock(props) {
     console.log(markup, tweet);
     if (tweet && tweet[1]) {
       return (
-        <div class="tweetembed">
+        <div className="tweetembed">
           <TwitterTweetEmbed tweetId={tweet[1]} />
         </div>
       );

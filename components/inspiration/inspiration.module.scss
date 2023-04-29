@@ -240,6 +240,35 @@
     }
   }
 
+  .datepub {
+    text-align: center;
+    &::after {
+      content: "";
+      block-size: 5px;
+      width: min(100%, 500px);
+      display: block;
+      margin: 3rem auto;
+      background: radial-gradient(
+          var(--c_secondary) 1px,
+          transparent 2px,
+          transparent 5px
+        )
+        50% 50% /8px 8px space;
+    }
+
+    em {
+      //color: var(--c_base_background);
+      //background: var(--c_primary);
+      display: block;
+      margin: 0 auto;
+      font-weight: bolder;
+      inline-size: fit-content;
+      @media (min-width: 64rem) {
+        display: inline;
+      }
+    }
+  }
+
   /* Prism variables */
 
   html & {
