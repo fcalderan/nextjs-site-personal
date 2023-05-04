@@ -43,6 +43,11 @@
     }
   }
 
+  .imagecnt {
+    position: relative;
+    aspect-ratio: 52/31;
+  }
+
   &[aria-labelledby="content"] {
     padding-block-end: 0;
     background: linear-gradient(

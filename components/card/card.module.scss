@@ -122,10 +122,15 @@
     text-align: left !important;
     font-size: 80%;
   }
-  img {
+
+  .imagecnt {
     max-width: 100%;
-    display: block;
     aspect-ratio: 52/31;
+    position: relative;
+  }
+
+  img {
+    display: block;
     border-radius: 0.25rem;
   }
 }

@@ -29,13 +29,27 @@ export default function Index(props) {
 
           <figure className={style.portrait}>
             <div>
-              <img
+              {/* <img
+                className={style.image}
                 fetchpriority="high"
                 width="230"
                 height="230"
-                src="/img/me-front2.png"
+                src="/img/me-front.png"
                 alt="my portrait, a not-so-young but still curious developer"
-              />
+              /> */}
+
+              <picture className={style.image}>
+                <source srcset="/img/me-front.webp" type="image/webp" />
+                <source srcset="/img/me-front.avif" type="image/avif" />
+
+                <img
+                  fetchpriority="high"
+                  width="230"
+                  height="230"
+                  src="/img/me-front.png"
+                  alt="my portrait, a not-so-young but still curious developer"
+                />
+              </picture>
             </div>
           </figure>
         </div>

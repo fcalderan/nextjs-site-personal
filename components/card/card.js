@@ -1,5 +1,6 @@
 import Link from "next/link";
 import style from "./card.module.scss";
+import Image from "next/image";
 
 export default function Card(props) {
   const field = props.inspiration.fields;
@@ -14,12 +15,15 @@ export default function Card(props) {
   return (
     <div className={style.card}>
       <article aria-describedby={id}>
-        <img
-          aria-hidden="true"
-          src={`https:${image.file.url}`}
-          alt={image.description}
-          loading="lazy"
-        />
+        <div className={style.imagecnt}>
+          <Image
+            aria-hidden="true"
+            src={`https:${image.file.url}`}
+            alt={image.description}
+            loading="lazy"
+            fill
+          />
+        </div>
 
         <header>
           <h3 id={id}>
