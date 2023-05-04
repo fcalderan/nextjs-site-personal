@@ -39,9 +39,8 @@ export default function Index(props) {
               /> */}
 
               <picture className={style.image}>
-                <source srcset="/img/me-front.webp" type="image/webp" />
                 <source srcset="/img/me-front.avif" type="image/avif" />
-
+                <source srcset="/img/me-front.webp" type="image/webp" />
                 <img
                   fetchpriority="high"
                   width="230"

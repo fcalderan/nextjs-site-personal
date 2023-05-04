@@ -45,17 +45,25 @@ export default function Footer(props) {
               />
             </svg>
             &copy; Fabrizio Calderan, <span>2023&mdash;Today</span>.<br />
+            <br />
             Made with love in nextJS and Contentful, hosted on Vercel.
           </p>
 
           <p>
-            This site aims to be inclusive and WCAG 2.1/AA conformant: if you
-            encounter any accessibility issues (or if you want to just say
-            «Hi!») feel free to contact me at{" "}
+            This is a{" "}
+            <a href="https://www.websitecarbon.com/website/fabrizio-dev/">
+              low carbon website
+            </a>
+            . It aims to be inclusive and{" "}
+            <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1/AA</a>{" "}
+            conformant. If you encounter any accessibility issues or if you want
+            to just say «Hi» feel free to contact me at{" "}
             <strong>
               m{/* */}e@f{/* */}abr{/* */}izio.dev
             </strong>
             .
+            <br />
+            <br />
           </p>
         </div>
 
