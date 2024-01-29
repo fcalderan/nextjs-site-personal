@@ -152,12 +152,12 @@
   background-color: var(--c_base_background);
   min-block-size: max(40vh, 25rem);
 
-  &[aria-labelledby="content"],
+  &[aria-labelledby="hello"],
   &[aria-labelledby="skills"] {
     background-color: var(--c_tertiary);
   }
 
-  &[aria-labelledby="content"] {
+  &[aria-labelledby="hello"] {
     @media (min-width: 48rem) {
       padding-block-start: 5rem;
     }
@@ -193,7 +193,7 @@
     font-size: clamp(3.5rem, 2.075rem + 4.5vw, 6rem);
     letter-spacing: min(-0.2rem, -0.35vw);
     margin-block-end: 3rem;
-    max-inline-size: 100%;
+    max-inline-size: min(100%, 60rem);
     margin-inline: auto;
 
     @media (min-width: 64rem) {
@@ -307,7 +307,7 @@
       margin: 0 auto;
     }
 
-    &[aria-labelledby="content"] > div {
+    &[aria-labelledby="hello"] > div {
       display: flex;
       justify-content: space-between;
       flex-wrap: nowrap;
