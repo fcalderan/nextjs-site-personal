@@ -10,10 +10,10 @@ import skill2 from "../../public/img/iaap-was-certificate.jpg";
 export default function Index(props) {
   return (
     <>
-      <section aria-labelledby="content" className={style.section}>
+      <section aria-labelledby="hello" className={style.section}>
         <div className="section_cnt">
           <div className={style.title}>
-            <h1 data-codeviewport>
+            <h1 id="hello" data-codeviewport>
               Hello. I am
               <br />
               <span>Fabrizio Calderan</span>
