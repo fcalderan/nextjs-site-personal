@@ -30,7 +30,7 @@ export default function Index(props) {
           <figure className={style.portrait}>
             <div>
               <picture className={style.image}>
-                <source srcset="/img/me-front.avif" type="image/avif" />
+                <source srcSet="/img/me-front.avif" type="image/avif" />
                 <img
                   fetchpriority="high"
                   width="230"
