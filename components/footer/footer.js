@@ -46,7 +46,7 @@ export default function Footer(props) {
             </svg>
             &copy; Fabrizio Calderan, <span>2023&mdash;Today</span>.<br />
             <br />
-            Made with love in nextJS and Contentful, hosted on Vercel.
+            Made with love in nextJS and Contentful, hosted on Vercel <a href="https://x.com/rauchg/status/1854206133776388461" target="_blank">(but I'm about to change)</a>.
           </p>
 
           <p>
