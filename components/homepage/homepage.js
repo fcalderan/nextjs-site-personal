@@ -35,7 +35,7 @@ export default function Index(props) {
                   fetchpriority="high"
                   width="230"
                   height="230"
-                  src="/img/me-front.webp"
+                  src="/img/me-front.png"
                   alt="my portrait, a not-so-young but still curious developer"
                 />
               </picture>
