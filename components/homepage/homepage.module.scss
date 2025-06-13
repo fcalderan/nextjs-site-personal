@@ -12,7 +12,7 @@
   --scale: 0.88;
   --rotation: 0.2deg;
   --grayscale: 0.2;
-  --mask-size: 85%;
+  --mask-size: 93%;
   --inline-size: min(230px, 80%);
   --duration: 0.75s;
   --delay: 0s;
@@ -43,7 +43,7 @@
     --scale: 1;
     --rotation: 1deg;
     --grayscale: 0.2;
-    --mask-size: 93%;
+    --mask-size: 85%;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -56,7 +56,7 @@
       --scale: 1;
       --rotation: 1deg;
       --grayscale: 0.2;
-      --mask-size: 93%;
+      --mask-size: 85%;
     }
   }
 
